@@ -7,6 +7,9 @@
   animation: slide-in 1s;
 }
 
+.section {
+  width: 100%;
+}
 
 @keyframes slide-in {
   from {

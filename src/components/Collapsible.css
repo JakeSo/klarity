@@ -1,0 +1,16 @@
+.collapsible.closed button::after{
+    content: "+";
+}
+
+.collapsible.open button::after {
+    content: "-";
+}
+
+.content-container {
+    overflow: hidden;
+    /* transition: max-height 0.5s ease-in-out; */
+  }
+  
+  .content-container p {
+    margin: 0; /* Ensure there's no additional margin interfering with height */
+  }
