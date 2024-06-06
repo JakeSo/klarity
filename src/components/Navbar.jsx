@@ -1,12 +1,13 @@
 import { useState } from "react";
+import {Link} from "react-router-dom";
 import './Navbar.css';
 import logo from '../assets/4.svg';
-
+import { Dropdown } from "flowbite-react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((isOpen) => !isOpen);
   };
 
   return (
@@ -23,7 +24,12 @@ const Navbar = () => {
         </button>
         <div className="nav-links hidden lg:flex lg:items-center">
           <ul className="flex flex-row space-x-8">
-            <li><a href="#Services" className="text-white py-2">Services</a></li>
+            <li>
+              <Dropdown onClick={() => location.href="#Services"} label="Services" className="text-red-50 p-0" inline trigger="hover">
+                <Dropdown.Item>Service 1</Dropdown.Item>
+                <Dropdown.Item>Service 2</Dropdown.Item>
+              </Dropdown>
+            </li>
             <li><a href="#" className="text-white py-2">Why Us?</a></li>
             <li><a href="#" className="text-white py-2">Get Started</a></li>
             <li><a href="#" className="text-white py-2">Blog</a></li>
@@ -35,7 +41,7 @@ const Navbar = () => {
           &times;
         </button>
         <ul className="flex flex-col items-center mt-20 space-y-8">
-          <li><a href="#Services" className="text-white py-2">Services</a></li>
+          <li><a href="#Services" className="text-white py-2" data-dropdown-toggle="service-dropdown">Services</a></li>
           <li><a href="#" className="text-white py-2">Why Us?</a></li>
           <li><a href="#" className="text-white py-2">Get Started</a></li>
           <li><a href="#" className="text-white py-2">Blog</a></li>

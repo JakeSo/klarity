@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import logo from './assets/1.svg'
 import banner from './assets/banner.mp4';
 import Collapsible from './components/Collapsible'
+import Button from './components/Button';
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <>
       <Navbar />
@@ -21,7 +20,7 @@ function App() {
             <h1 className='uppercase pb-10'>helping restaurants thrive in an ever-evolving industry</h1>
             <h3>Our mission is to elevate dining experiences by providing expert guidance, fostering culinary innovation, optimizing sustainable practices, and delighting food enthusiasts with exceptional quality and service.</h3>
           </div>
-          <div className='w-full h-full md:w-1/2 bg-gray-400 '>
+          <div className='w-full h-full md:w-1/2 bg-[#7e6b73] '>
             <img className='slide-in mx-auto my-10' src='https://placehold.co/400x600'></img>
           </div>
         </div>
@@ -33,7 +32,7 @@ function App() {
               <Collapsible title="CONSULTING">
                 We do consulting
               </Collapsible>
-              <hr />
+              <hr color='#736b73' />
               <Collapsible title={"TRAINING AND DEVELOPMENT"}>
                 We do training and development
               </Collapsible>
@@ -51,8 +50,8 @@ function App() {
           <div className='w-full h-full p-10 md:w-1/2 md:h-2/3 mt-28 text-center slide-in'>
             {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
             <h1 className='uppercase pb-10'>ready to take your restaurant to the <span className='text-gold'>next level</span>?</h1>
-            <h3 className='text-xl'>Contact us today to schedule a consultation. Let's work together to unlock the full potential of your business and create unforgettable experiences for your guests.</h3>
-            <button id='contact-btn' className='mt-28'>Contact Us</button>
+            <h3 className='text-xl mb-12'>Contact us today to schedule a consultation. Let&apos;s work together to unlock the full potential of your business and create unforgettable experiences for your guests.</h3>
+            <Button id='contact-btn' size={"2xl"}>Contact Us</Button>
           </div>
           <div className='w-full h-full md:w-1/2 bg-gray-400 '>
             <img className='slide-in' src='https://placehold.co/760x760'></img>

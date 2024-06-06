@@ -12,7 +12,7 @@ const Collapsible = ({title, children}) => {
     return (
         <div className={`collapsible ${open ? "open" : "closed"}`}>
       <button 
-        className="w-full flex justify-between bg-transparent text-left text-2xl border-none rounded-none" 
+        className="w-full flex justify-between bg-transparent text-left text-2xl border-none rounded-none p-3" 
         onClick={toggle}
       >
         {title}

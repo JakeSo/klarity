@@ -1,5 +1,9 @@
-.nav-links a {
+.nav-links li {
     margin-right: 10px;
     text-decoration: none;
     font-size: larger;
+}
+
+button {
+    padding: 0;
 }

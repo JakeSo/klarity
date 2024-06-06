@@ -1,9 +1,15 @@
+.collapsible button::after {
+  color: #7e6b73;
+}
+
 .collapsible.closed button::after{
+    font-family: serif;
     content: "+";
 }
 
 .collapsible.open button::after {
-    content: "-";
+    font-family: serif;
+    content: "–";
 }
 
 .content-container {
