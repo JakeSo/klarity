@@ -3,6 +3,18 @@ import './Navbar.css';
 import logo from '../assets/4.svg';
 import { Dropdown } from "flowbite-react";
 import { NavLink } from "react-router-dom";
+
+const dropDownTheme = {
+  floating: {
+    style: {
+      auto: "bg-gold text-black"
+    },
+    item: {
+      base: "flex w-full cursor-pointer items-center justify-start px-4 py-2 text-base text-black hover:bg-black focus:bg-black focus:outline-none focus:text-gold"
+    }
+}
+}
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,10 +36,12 @@ const Navbar = () => {
         </button>
         <div className="nav-links hidden lg:flex lg:items-center">
           <ul className="flex flex-row space-x-8">
+            <li><NavLink to="/About" className="text-white py-2">About</NavLink></li>
             <li>
-              <Dropdown label="Services" inline trigger="hover">
+              <Dropdown label="Services" theme={dropDownTheme} inline trigger="hover">
                 <Dropdown.Item as={NavLink}>Service 1</Dropdown.Item>
                 <Dropdown.Item as={NavLink}>Service 2</Dropdown.Item>
+                <Dropdown.Item as={NavLink}>Service 3</Dropdown.Item>
               </Dropdown>
             </li>
             <li><a href="#Why"  className="text-white py-2">Why Us? </a></li>
@@ -41,9 +55,10 @@ const Navbar = () => {
           &times;
         </button>
         <ul className="flex flex-col items-center mt-20 space-y-8">
-          <li>
-        <Dropdown label="Services" inline trigger="hover">
-                <Dropdown.Item as={NavLink}>Service 1</Dropdown.Item>
+            <li><NavLink to="/About" className="text-white py-2">About</NavLink></li>
+            <li>
+              <Dropdown theme={dropDownTheme} label="Services" inline trigger="hover">
+                <Dropdown.Item  as={NavLink}>Service 1</Dropdown.Item>
                 <Dropdown.Item as={NavLink}>Service 2</Dropdown.Item>
               </Dropdown>
             </li>
