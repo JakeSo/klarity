@@ -9,7 +9,7 @@ const router = createBrowserRouter([
   errorElement: <ErrorPage />,
   children: [
     {
-      path: '/',
+      path: '/Klarity/',
       element: <Home />
     },
   ]
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-      <RouterProvider router={router}/>
+      <RouterProvider  router={router}/>
   )
 }
 
