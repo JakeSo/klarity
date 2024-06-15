@@ -4,6 +4,9 @@
     font-size: larger;
 }
 
+.nav-links a:hover, .nav-links a:focus {
+    text-decoration-line: none;
+}
 button {
     padding: 0;
 }

@@ -17,6 +17,6 @@
     /* transition: max-height 0.5s ease-in-out; */
   }
   
-  .content-container p {
+  .content-container div {
     margin: 0; /* Ensure there's no additional margin interfering with height */
   }

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import {Link} from "react-router-dom";
 import './Navbar.css';
 import logo from '../assets/4.svg';
 import { Dropdown } from "flowbite-react";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,8 +13,8 @@ const Navbar = () => {
   return (
     <nav className="bg-black fixed top-0 left-0 w-full py-5 z-10">
       <div className="flex items-center justify-between px-8">
-        <div className="brand w-1/6">
-          <img title="logo" src={logo} className="lg:w-full md:w-1/2" alt="logo" />
+        <div className="brand w-1/3 md:w-1/6">
+          <img title="logo" src={logo} className="lg:w-full max-w-40 md:w-1/2" alt="logo" />
         </div>
         <button 
           className="text-white lg:hidden" 
@@ -25,14 +25,14 @@ const Navbar = () => {
         <div className="nav-links hidden lg:flex lg:items-center">
           <ul className="flex flex-row space-x-8">
             <li>
-              <Dropdown onClick={() => location.href="#Services"} label="Services" className="text-red-50 p-0" inline trigger="hover">
-                <Dropdown.Item>Service 1</Dropdown.Item>
-                <Dropdown.Item>Service 2</Dropdown.Item>
+              <Dropdown label="Services" inline trigger="hover">
+                <Dropdown.Item as={NavLink}>Service 1</Dropdown.Item>
+                <Dropdown.Item as={NavLink}>Service 2</Dropdown.Item>
               </Dropdown>
             </li>
-            <li><a href="#" className="text-white py-2">Why Us?</a></li>
-            <li><a href="#" className="text-white py-2">Get Started</a></li>
-            <li><a href="#" className="text-white py-2">Blog</a></li>
+            <li><a href="#Why"  className="text-white py-2">Why Us? </a></li>
+            <li><a href="#Contact" className="text-white py-2">Get Started</a></li>
+            <li><NavLink to="/Blog" className="text-white py-2">Blog</NavLink></li>
           </ul>
         </div>
       </div>
@@ -41,11 +41,16 @@ const Navbar = () => {
           &times;
         </button>
         <ul className="flex flex-col items-center mt-20 space-y-8">
-          <li><a href="#Services" className="text-white py-2" data-dropdown-toggle="service-dropdown">Services</a></li>
-          <li><a href="#" className="text-white py-2">Why Us?</a></li>
-          <li><a href="#" className="text-white py-2">Get Started</a></li>
-          <li><a href="#" className="text-white py-2">Blog</a></li>
-        </ul>
+          <li>
+        <Dropdown label="Services" inline trigger="hover">
+                <Dropdown.Item as={NavLink}>Service 1</Dropdown.Item>
+                <Dropdown.Item as={NavLink}>Service 2</Dropdown.Item>
+              </Dropdown>
+            </li>
+            <li><a href="#Why"  className="text-white py-2">Why Us? </a></li>
+            <li><a href="#Contact" className="text-white py-2">Get Started</a></li>
+            <li><NavLink to="/Blog" className="text-white py-2">Blog</NavLink></li>
+          </ul>
       </div>
     </nav>
   );

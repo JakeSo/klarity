@@ -1,6 +1,6 @@
-const Button = ({children, size, ...otherProps}) => {
+const Button = ({children, className, size, ...otherProps}) => {
     
-    return (<button className={`p-3 rounded-full hover:border-gold text-${size}`} { ...otherProps }>
+    return (<button className={`rounded-full border-[1px] border-transparent  transition-colors duration-300 hover:border-gold text-${size} ` + className} { ...otherProps }>
             {children}
     </button>)
 }
