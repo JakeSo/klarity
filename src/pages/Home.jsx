@@ -1,5 +1,5 @@
 import PhotoCard from "../components/PhotoCard.jsx";
-import Collapsible from "../components/Collapsible.jsx";
+import Service from "../components/Service.jsx";
 import Button from "../components/Button.jsx";
 import logo from '../assets/1.svg'
 import banner from '../assets/banner.mp4';
@@ -37,45 +37,44 @@ const Home = () => {
 
     return (
     <div className='mt-16 md:mt-0'>
-        <div className='section'>
-          <video autoPlay muted loop disablePictureInPicture>
+        <div className='section relative overflow-hidden align-middle' style={{height: "90vh"}}>
+          <video className="absolute top-1/4 -translate-y-1/4" autoPlay muted loop disablePictureInPicture>
             <source src={banner}></source>
           </video>
         </div>
         <div className='section flex flex-wrap min-h-full w-full'>
-          <div className='w-full h-full px-4 py-10 md:px-10 mb-28 md:w-1/2 text-center'>
+          <div className='w-full h-full px-4 py-10 md:px-10 mb-28 md:w-2/3 text-center my-auto'>
             <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img>
             <h1 className='pb-10'>HELPING RESTAURANTS THRIVE IN AN EVER-EVOLVING INDUSTRY</h1>
-            <h3>Our mission is to elevate dining experiences by providing expert guidance, fostering culinary innovation, optimizing sustainable practices, and delighting food enthusiasts with exceptional quality and service.</h3>
           </div>
-          <div className='w-full h-full md:w-1/2 bg-[#7e6b73] '>
+          <div className='w-full h-full md:w-1/3'>
             <img className='mx-auto my-10' src='https://placehold.co/400x600?text=2:3'></img>
           </div>
         </div>
+        <div className="section text-center p-5">
+        <h2 className="">Our mission is to elevate dining experiences by providing expert guidance, fostering culinary innovation, optimizing sustainable practices, and delighting food enthusiasts with exceptional quality and service.</h2>
+        </div>
         <div id='Services' className='section flex flex-wrap scroll-pt-8'>
-          <div className='w-full h-full md:w-2/3 md:h-2/3 my-28 text-left p-8'>
+          <div className='w-full h-full  my-28 text-left p-8'>
             <h1 className='uppercase'>Our Services</h1>
-            <h3 className='text-gray-400'>Klarity is dedicated to providing top-notch service.</h3>
-            <div className='w-full mt-10 pr-5'>
-              <Collapsible title="CONSULTING">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Nunc sed augue lacus viverra.</p>
+            <div className='w-full mt-10 pr-5 flex flex-row justify-evenly h-4/5'>
+              <Service title="CONSULTING">
+              <p className="px-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Nunc sed augue lacus viverra.</p>
               <a className="float-end py-2 text-gold" href="/Services/Service1">Learn More...</a>
-              </Collapsible>
-              <hr color='#736b73' />
-              <Collapsible title={"TRAINING AND DEVELOPMENT"}>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Nunc sed augue lacus viverra.</p>
+              </Service>
+              <Service title={"TRAINING & DEVELOPMENT"}>
+              <p className="px-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Nunc sed augue lacus viverra.</p>
               <a className="float-end py-2 text-gold" href="/Services/Service2">Learn More...</a>
-              </Collapsible>
-              <hr />
-              <Collapsible title={"QUALITY ASSURANCE"}>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Nunc sed augue lacus viverra.</p>
+              </Service>
+              <Service title={"QUALITY ASSURANCE"}>
+              <p className="px-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Nunc sed augue lacus viverra.</p>
               <a className="float-end py-2 text-gold" href="/Services/Service3">Learn More...</a>
-              </Collapsible>
+              </Service>
             </div>
           </div>
-          <div className='w-full md:w-1/3 slide-in md:p-10'>
+          {/* <div className='w-full md:w-1/3 slide-in md:p-10'>
             <img className='mx-auto my-10' src='https://placehold.co/400x600?text=2:3'></img>
-          </div>
+          </div> */}
         </div>
         <div id='Why' className='section flex flex-wrap text-center'>
           <h1 className="mb-8 py-10 px-4 mx-auto">WHY CHOOSE US?</h1>
@@ -88,9 +87,9 @@ const Home = () => {
         <div id='Contact' className='section flex flex-wrap'>
           <div className='w-full h-full p-10 md:w-1/2 md:h-2/3 my-28 text-center'>
             {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
-            <h1 className='uppercase pb-10'>ready to take your restaurant to the <span className='text-gold'>next level</span>?</h1>
+            <h1 className='uppercase pb-10'>Let&apos;s take your restaurant to the <span className='text-gold'>highest level</span>!</h1>
             <h3 className='text-xl mb-12'>Contact us today to schedule a consultation. Let&apos;s work together to unlock the full potential of your business and create unforgettable experiences for your guests.</h3>
-            <Button id='contact-btn' className="p-3" size={"2xl"} onClick={openContactForm}>Contact Us</Button>
+            <Button id='contact-btn' className="p-4 " size={"4xl"} onClick={openContactForm}>Contact Us</Button>
             <ContactForm openModal={openModal} setOpenModal={setOpenModal} />
           </div>
           <div className='w-full h-full md:w-1/2 bg-gray-400 '>

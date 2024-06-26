@@ -1,0 +1,27 @@
+.photoCard {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+
+
+
+.photoCard:hover .photoCard-inner {
+    transform: rotateY(180deg);
+}
+
+.photoCard-inner {
+  /* text-align: center; */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.photoCard-front, .photoCard-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.photoCard-back {
+    transform: rotateY(180deg);
+}
+
