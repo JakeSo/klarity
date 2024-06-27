@@ -38,7 +38,7 @@ const Home = () => {
     return (
     <div className='mt-16 md:mt-0'>
         <div className='section banner'>
-          <video className="absolute top-1/4 -translate-y-1/4" autoPlay muted loop disablePictureInPicture>
+          <video className="absolute top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3" autoPlay muted loop disablePictureInPicture>
             <source src={banner}></source>
           </video>
         </div>
