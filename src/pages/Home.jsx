@@ -37,7 +37,7 @@ const Home = () => {
 
     return (
     <div className='mt-16 md:mt-0'>
-        <div className='section relative overflow-hidden align-middle' style={{height: "90vh"}}>
+        <div className='section banner' style={{ height: "90vh"}}>
           <video className="absolute top-1/4 -translate-y-1/4" autoPlay muted loop disablePictureInPicture>
             <source src={banner}></source>
           </video>
