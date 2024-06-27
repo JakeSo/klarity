@@ -6,7 +6,7 @@
 
 
 
-.photoCard:hover .photoCard-inner {
+.photoCard:hover .photoCard-inner, .photoCard:focus .photoCard-inner {
     transform: rotateY(180deg);
 }
 

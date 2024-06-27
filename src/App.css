@@ -18,14 +18,15 @@ html {
 
 .stain {
   display: flex;
-  width: -moz-fit-content;
-  width: fit-content;
+  /* width: -moz-fit-content;
+  width: fit-content; */
   padding: 0 5%;
-  background-image: url('../assets/stain.svg');
+  background-image: url('/src/assets/stain.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   aspect-ratio: 1/1;
   align-items: center;  
+  justify-content: center;
   text-align: center;
 }
 

@@ -57,7 +57,7 @@ const Home = () => {
         <div id='Services' className='section flex flex-wrap scroll-pt-8'>
           <div className='w-full h-full  my-28 text-left p-8'>
             <h1 className='uppercase'>Our Services</h1>
-            <div className='w-full mt-10 pr-5 flex flex-row justify-evenly h-4/5'>
+            <div className='w-full mt-10 pr-5 flex flex-col md:flex-row justify-evenly h-4/5'>
               <Service title="CONSULTING">
               <p className="px-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Nunc sed augue lacus viverra.</p>
               <a className="float-end py-2 text-gold" href="/Services/Service1">Learn More...</a>
@@ -78,7 +78,7 @@ const Home = () => {
         </div>
         <div id='Why' className='section flex flex-wrap text-center'>
           <h1 className="mb-8 py-10 px-4 mx-auto">WHY CHOOSE US?</h1>
-          <div className="flex justify-center flex-col md:flex-row w-full h-full">
+          <div className="flex justify-center flex-col flex-wrap md:flex-row w-full h-full">
             {whyUsSections.map(section => (
               <PhotoCard key={section.id} {...section} />
             ))}
