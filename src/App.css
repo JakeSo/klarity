@@ -75,3 +75,10 @@ a:hover, a:focus {
   text-decoration: underline rgb(255,170,22);
 
 }
+
+#goalsList li {
+
+  padding: 1% 0;
+  list-style: disc inside;
+  
+}

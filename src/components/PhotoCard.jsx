@@ -12,7 +12,7 @@ const PhotoCard = ({ id, img, title, description }) => {
         /> */}
         <div className='flex justify-center h-full bg-black bg-opacity-20'>
           <div className="stain max-w-80">
-            <h2 className="px-12" >{title}</h2>
+            <h2 className="px-12 drop-shadow" >{title}</h2>
           </div>
         </div>
         </div>
