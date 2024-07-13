@@ -7,7 +7,7 @@ const ErrorPage = () => {
       <img src={logo} alt="Klarity logo" className='w-24 mb-8' />
       <h1 className='text-4xl font-bold mb-4'>404 - Page Not Found</h1>
       <p className='text-lg mb-8'>Oops! The page you are looking for does not exist.</p>
-      <Link to="/Klarity" className='text-gold text-lg underline'>
+      <Link to="/klarity/" className='text-gold text-lg underline'>
         Go back to Home
       </Link>
     </div>

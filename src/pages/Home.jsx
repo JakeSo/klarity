@@ -57,7 +57,7 @@ const Home = () => {
           </video>
           </div>
         </div>
-        <div className="section text-center py-10 px-4 md:px-28">
+        <div className="section text-center py-16 px-4 md:px-28">
         <h2 className="italic">Our mission is to elevate dining experiences by providing expert guidance, fostering culinary innovation, optimizing sustainable practices, and delighting food enthusiasts with exceptional quality and service.</h2>
         </div>
         <div id='Services' className='section flex flex-wrap scroll-pt-8'>
