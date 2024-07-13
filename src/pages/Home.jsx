@@ -63,7 +63,7 @@ const Home = () => {
         <div id='Services' className='section flex flex-wrap scroll-pt-8'>
           <div className='w-full h-full  my-10 text-left p-8'>
             <h1 className='uppercase text-center'>Our Services</h1>
-            <div className='w-full mt-10 pr-5 flex flex-col md:flex-row justify-evenly h-4/5'>
+            <div className='w-full mt-10 flex flex-col md:flex-row justify-evenly h-4/5'>
               <Service title="CONSULTING">
               <p className="px-5 text-2xl"> We understand your passion for opening a restaurant and want to reduce daily pressures and worries. Klarity offers a thorough analysis of your business to address all concerns and underlying issues.</p>
               <a className="float-end py-2 text-gold" href="/Services/Service1">Learn More...</a>
