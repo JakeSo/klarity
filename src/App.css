@@ -82,3 +82,9 @@ a:hover, a:focus {
   list-style: disc inside;
   
 }
+
+#goalsList li::marker {
+  content: "\2713  ";
+  margin: 100%;
+  color: rgb(255,170,22);
+}

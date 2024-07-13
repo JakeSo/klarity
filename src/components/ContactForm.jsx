@@ -13,6 +13,13 @@ const inputTheme  = {
     }
 }
 
+const modalTheme = {
+  header: {
+    base: "flex items-start justify-between rounded-t border-0 p-5 dark:border-transparent"
+
+  }
+}
+
 export function ContactForm({openModal, setOpenModal}) {
   const [contactInfo, setContactInfo] = useState(
     {
@@ -46,9 +53,9 @@ export function ContactForm({openModal, setOpenModal}) {
   }
 
   return (
-      <Modal className="bg-gray-950 slide-in " show={openModal} size="md" onClose={onCloseModal} popup>
-        <Modal.Header className="bg-black" />
-        <Modal.Body className="bg-black">
+      <Modal className="bg-gray-950 slide-in " show={openModal} size="md" onClose={onCloseModal} theme={modalTheme} popup>
+        <Modal.Header className="bg-black " />
+        <Modal.Body className="bg-black ">
           <div className="space-y-6">
             <h2 className="font-medium uppercase text-gray-900 dark:text-white">Contact Us!</h2>
             <div>
