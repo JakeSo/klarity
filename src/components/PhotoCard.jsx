@@ -17,7 +17,7 @@ const PhotoCard = ({ id, img, title, description }) => {
         </div>
         </div>
         <div className='photoCard-back absolute inset-0 flex w-full h-full justify-center items-center bg-gold text-center'>
-          <p className=" text-2xl px-3">
+          <p className=" text-6xl px-8">
             {description}
           </p>
         </div>

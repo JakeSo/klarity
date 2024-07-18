@@ -3,7 +3,8 @@ import './Navbar.css';
 import logo from '../assets/4.svg';
 import { Dropdown } from "flowbite-react";
 import { NavLink } from "react-router-dom";
-
+import Button from "./Button";
+import { ContactForm } from "./ContactForm";
 const dropDownTheme = {
   floating: {
     style: {
@@ -17,6 +18,8 @@ const dropDownTheme = {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [openModal, setOpenModal] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen((isOpen) => !isOpen);
@@ -36,17 +39,19 @@ const Navbar = () => {
         </button>
         <div className="nav-links hidden lg:flex lg:items-center">
           <ul className="flex flex-row space-x-8">
-            <li><NavLink to="/About" className="text-white py-2">About</NavLink></li>
-            <li>
-              <Dropdown label="Services" theme={dropDownTheme} inline trigger="hover">
-                <Dropdown.Item as={NavLink}>Service 1</Dropdown.Item>
-                <Dropdown.Item as={NavLink}>Service 2</Dropdown.Item>
-                <Dropdown.Item as={NavLink}>Service 3</Dropdown.Item>
-              </Dropdown>
-            </li>
-            <li><a href="#Why"  className="text-white py-2">Why Us? </a></li>
-            <li><a href="#Contact" className="text-white py-2">Get Started</a></li>
-            <li><NavLink to="/Blog" className="text-white py-2">Blog</NavLink></li>
+          <li><Button id='contact-btn' className="p-4 mt-4" size={"4xl"} onClick={() => setOpenModal(true)}>Contact Us</Button></li>
+          
+             {/* <li><NavLink to="/About" className="text-white py-2">About</NavLink></li>
+             <li>
+               <Dropdown label="Services" theme={dropDownTheme} inline trigger="hover">
+                 <Dropdown.Item as={NavLink}>Service 1</Dropdown.Item>
+                 <Dropdown.Item as={NavLink}>Service 2</Dropdown.Item>
+                 <Dropdown.Item as={NavLink}>Service 3</Dropdown.Item>
+               </Dropdown>
+             </li>
+             <li><a href="#Why"  className="text-white py-2">Why Us? </a></li>
+             <li><a href="#Contact" className="text-white py-2">Get Started</a></li>
+             <li><NavLink to="/Blog" className="text-white py-2">Blog</NavLink></li> */}
           </ul>
         </div>
       </div>
@@ -55,7 +60,8 @@ const Navbar = () => {
           &times;
         </button>
         <ul className="flex flex-col items-center mt-20 space-y-8">
-            <li><NavLink to="/About" className="text-white py-2">About</NavLink></li>
+          <li><Button id='contact-btn' className="p-4" size={""} onClick={() => setOpenModal(true)}>Contact Us</Button></li>
+            {/* <li><NavLink to="/About" className="text-white py-2">About</NavLink></li>
             <li>
               <Dropdown theme={dropDownTheme} label="Services" inline trigger="hover">
                 <Dropdown.Item  as={NavLink}>Service 1</Dropdown.Item>
@@ -64,10 +70,12 @@ const Navbar = () => {
             </li>
             <li><a href="#Why"  className="text-white py-2">Why Us? </a></li>
             <li><a href="#Contact" className="text-white py-2">Get Started</a></li>
-            <li><NavLink to="/Blog" className="text-white py-2">Blog</NavLink></li>
+            <li><NavLink to="/Blog" className="text-white py-2">Blog</NavLink></li> */}
           </ul>
       </div>
+      <ContactForm openModal={openModal} setOpenModal={setOpenModal} />
     </nav>
+    
   );
 }
 

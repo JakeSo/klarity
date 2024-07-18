@@ -41,14 +41,14 @@ const Home = () => {
 
     return (
     <div className='mt-16 md:mt-0'>
-        <div className='section banner flex justify-center'>
+        <div className='section banner flex justify-center'  style={{maxHeight: '720px'}}>
           <video className="absolute top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3" autoPlay muted loop disablePictureInPicture>
             <source src={banner}></source>
           </video>
         </div>
         <div className='section flex flex-wrap min-h-full w-full items-baseline'>
           <div className='w-full h-full pb-16 px-4 md:px-10 md:w-2/3 text-center my-auto'>
-            <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img>
+            <img src={logo} alt="Klarity logo" className='mx-auto w-24 md:w-36 py-10'></img>
             <h1 className='px-4 md:text-6xl'>HELPING RESTAURANTS THRIVE IN AN EVER-EVOLVING INDUSTRY</h1>
           </div>
           <div className='w-full h-full md:w-1/3'>
@@ -61,7 +61,7 @@ const Home = () => {
         <h2 className="italic">Our mission is to elevate dining experiences by providing expert guidance, fostering culinary innovation, optimizing sustainable practices, and delighting food enthusiasts with exceptional quality and service.</h2>
         </div>
         <div id='Services' className='section flex flex-wrap scroll-pt-8'>
-          <div className='w-full h-full  my-10 text-left p-8'>
+          <div className='w-full h-full text-left p-8'>
             <h1 className='uppercase text-center'>Our Services</h1>
             <div className='w-full mt-10 flex flex-col md:flex-row justify-evenly h-4/5'>
               <Service title="CONSULTING">
@@ -91,11 +91,11 @@ const Home = () => {
           </div>
         </div>
         <div id='Contact' className='section flex flex-wrap'>
-          <div className='w-full h-full p-10 md:w-1/2 md:h-2/3 my-8 text-center'>
+          <div className='w-full h-full p-10 md:w-1/2 md:h-2/3 my-auto text-center'>
             {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
             <h1 className='uppercase pb-8'>Let&apos;s take your restaurant to the <span className='text-gold'>highest level</span>!</h1>
             <h2 className="text-2xl pb-4">Klarity aims to offer owners a sense of assurance by ensuring that their restaurant team is committed to their success. Our goal is to eliminate those sleepless nights by:</h2>
-            <ul id="goalsList" className="list-disc list-inside text-xl py-2">
+            <ul id="goalsList" className="list-disc text-left list-inside text-2xl md:px-16 py-2">
               <li>Ensuring your restaurant generates profits and fills you with pride.</li>
               <li>Recapturing the contagious passion that initially led you to open a
               restaurant.</li>
@@ -105,7 +105,7 @@ const Home = () => {
               beyond just the visible issues keeping you awake at night.</li>
             </ul>
             <h3 className='text-2xl my-4'>Let&apos;s work together to unlock the full potential of your business and create unforgettable experiences for your guests.</h3>
-            <Button id='contact-btn' className="p-4 " size={"4xl"} onClick={openContactForm}>Contact Us</Button>
+            <Button id='contact-btn' className="p-4 mt-4" size={"4xl"} onClick={openContactForm}>Contact Us</Button>
             <ContactForm openModal={openModal} setOpenModal={setOpenModal} />
           </div>
           <div className='w-full h-full md:w-1/2 bg-gray-400 '>
