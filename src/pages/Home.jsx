@@ -49,7 +49,7 @@ const Home = () => {
         <div className='section flex flex-wrap min-h-full w-full items-baseline'>
           <div className='w-full h-full pb-16 px-4 md:px-10 md:w-2/3 text-center my-auto'>
             <img src={logo} alt="Klarity logo" className='mx-auto w-32 py-6 md:w-44 md:py-10'></img>
-            <h1 className='px-4 text-4xl md:text-6xl'>HELPING RESTAURANTS THRIVE IN AN EVER-EVOLVING INDUSTRY</h1>
+            <h1 className='px-4 text-5xl md:text-6xl'>HELPING RESTAURANTS THRIVE IN AN EVER-EVOLVING INDUSTRY</h1>
           </div>
           <div className='w-full h-full md:w-1/3'>
           <video className="w-full" autoPlay muted loop disablePictureInPicture>
@@ -93,7 +93,7 @@ const Home = () => {
         <div id='Contact' className='section flex flex-wrap'>
           <div className='w-full h-full p-10 md:w-1/2 md:h-2/3 my-auto text-center'>
             {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
-            <h1 className='uppercase pb-8 text-4xl md:text-6xl'>Let&apos;s take your restaurant to the <span className='text-gold'>highest level</span>!</h1>
+            <h1 className='uppercase pb-8 text-5xl md:text-6xl'>Let&apos;s take your restaurant to the <span className='text-gold'>highest level</span>!</h1>
             <h2 className="text-2xl pb-4">Klarity aims to offer owners a sense of assurance by ensuring that their restaurant team is committed to their success. Our goal is to eliminate those sleepless nights by:</h2>
             <ul id="goalsList" className="list-disc text-left list-inside text-2xl md:px-16 py-2">
               <li>Ensuring your restaurant generates profits and fills you with pride.</li>
