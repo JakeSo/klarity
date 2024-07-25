@@ -10,14 +10,14 @@ const PhotoCard = ({ id, img, title, description }) => {
           alt={title}
           className="w-full h-full object-cover opacity-75"
         /> */}
-        <div className='flex justify-center h-full bg-black bg-opacity-20'>
+        <div className='flex justify-center h-full bg-black bg-opacity-35'>
           <div className="stain max-w-80">
             <h2 className="px-12 drop-shadow" >{title}</h2>
           </div>
         </div>
         </div>
         <div className='photoCard-back absolute inset-0 flex w-full h-full justify-center items-center bg-gold text-center'>
-          <p className=" text-6xl px-8">
+          <p className=" text-4xl md:text-6xl px-8">
             {description}
           </p>
         </div>

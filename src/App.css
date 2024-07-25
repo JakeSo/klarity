@@ -18,9 +18,23 @@ html {
   height: 33vh;
 }
 
+#goalsList li {
+
+  padding: 4% 0;
+  list-style: disc inside;
+  
+}
+
 @media only screen and (min-width:800px) {
   .banner {
     height: 50vh;
+  }
+
+  #goalsList li {
+
+    padding: 1% 0;
+    list-style: disc inside;
+    
   }
 }
 
@@ -76,12 +90,7 @@ a:hover, a:focus {
 
 }
 
-#goalsList li {
 
-  padding: 1% 0;
-  list-style: disc inside;
-  
-}
 
 #goalsList li::marker {
   content: "\2713  ";
