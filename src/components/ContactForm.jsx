@@ -1,5 +1,5 @@
-
-import {  Label, Modal, TextInput, Textarea } from "flowbite-react";
+import { Modal } from "./Modal"
+import { Label, TextInput, Textarea } from "flowbite-react";
 import Button from "./Button";
 import { useState } from "react";
 
@@ -13,50 +13,34 @@ const inputTheme  = {
     }
 }
 
-const modalTheme = {
-  header: {
-    base: "flex items-start justify-between rounded-t border-0 p-5 dark:border-transparent"
-
-  }
-}
-
-export function ContactForm({openModal, setOpenModal}) {
-  const [contactInfo, setContactInfo] = useState(
-    {
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        message: ""
-    }
-);
-
-  function onCloseModal() {
-    setOpenModal(false);
-    setContactInfo({
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        message: ""
-    });
-  }
-
-  function handleInputChange(event) {
-    const {id, value} = event.target;
-    setContactInfo((prevState) => (
+export const ContactForm = (props) => {
+    console.log({...props});
+    const [contactInfo, setContactInfo] = useState(
         {
-            ...prevState,
-            [id]: value
+            name: "",
+            company: "",
+            email: "",
+            phone: "",
+            message: ""
         }
-    ));
-  }
+    );
+    
 
-  return (
-      <Modal className="bg-gray-950 slide-in " show={openModal} size="md" onClose={onCloseModal} theme={modalTheme} popup>
-        <Modal.Header className="bg-black " />
-        <Modal.Body className="bg-black ">
-          <div className="space-y-6">
+    
+      function handleInputChange(event) {
+        const {id, value} = event.target;
+        setContactInfo((prevState) => (
+            {
+                ...prevState,
+                [id]: value
+            }
+        ));
+      }
+
+
+    return (
+        <Modal size="md" {...props}>
+            <div className="space-y-6">
             <h2 className="font-medium uppercase text-gray-900 dark:text-white">Contact Us!</h2>
             <div>
                 <div className="mb-2 block">
@@ -102,7 +86,5 @@ export function ContactForm({openModal, setOpenModal}) {
             </div>
             
           </div>
-        </Modal.Body>
-      </Modal>
-  );
+        </Modal>)
 }

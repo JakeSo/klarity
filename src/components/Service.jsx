@@ -10,7 +10,7 @@ const Service = ({title, children}) => {
     }
 
     return (
-        <div className="h-full my-5">
+        <div className="service h-full my-5">
             <div className="stain w-full max-w-80 h-full justify-center mx-auto ">
                 <h2 className="text-3xl">{title}</h2>
             </div>
