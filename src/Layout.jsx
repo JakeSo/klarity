@@ -8,7 +8,7 @@ const Layout = () => {
     return (
         <>
             <Navbar />
-            <main style={{maxWidth: "1920px"}} className="mt-16 mx-auto md:mt-0">
+            <main style={{maxWidth: "1920px"}} className={`mt-16 mx-auto md:mt-0 ${window.location.pathname.toUpperCase().includes('ABOUT') && "bg-gold"}`}>
                 <Outlet />
             </main>
             <Footer />

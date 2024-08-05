@@ -4,6 +4,7 @@ import Button from "../components/Button.jsx";
 import { ContactForm } from "../components/ContactForm.jsx";
 import logo from "../assets/1.svg";
 import banner from "../assets/banner.mp4";
+import serviceVideo1 from "../assets/SERVICE_VIDEO1.gif"
 import onions from "../assets/PIC 1.mp4";
 import { Modal } from "../components/Modal.jsx";
 import { whyUsSections, serviceContent } from "../content/content.js";
@@ -43,9 +44,10 @@ const Home = () => {
           </h1>
         </div>
         <div className="w-full h-full md:w-1/3">
-          <video className="w-full" autoPlay muted loop disablePictureInPicture>
+        <img className="w-full" src={serviceVideo1} />
+          {/* <video className="w-full" autoPlay muted loop disablePictureInPicture>
             <source src={onions}></source>
-          </video>
+          </video> */}
         </div>
       </div>
       <div className="section text-center py-16 px-4 md:px-28">
@@ -78,7 +80,8 @@ const Home = () => {
                 openModal={showServiceModal1}
                 onCloseModal={setShowServiceModal1}
               >
-                <p className="mb-4 md:text-2xl">
+                <h4 className="text-4xl mb-4 px-4">CONSULTING</h4>
+                <p className="mb-4 md:text-2xl px-4">
                   Our services encompass a thorough evaluation and improvement
                   of operational functions at all levels. Klarity will play a
                   crucial role in transforming organizational culture and talent
@@ -89,14 +92,14 @@ const Home = () => {
                   optimizing operational processes. We are committed to
                   increasing profitability through enhanced operating systems.
                 </p>
-                <p className="mb-4 md:text-2xl">
+                <p className="mb-4 md:text-2xl px-4">
                   Our advisors focus on end-to-end conceptualization and precise
                   execution of innovative ideas, providing continuous guidance
                   during pre-opening, post-opening, and turnaround phases. With
                   meticulous project oversight, we ensure the timely and
                   successful completion of projects.
                 </p>
-                <p className="mb-4 md:text-2xl">
+                <p className="mb-4 md:text-2xl px-4">
                   Additionally, Klarity offers support in recruiting, talent
                   acquisition, and filling managerial and senior-level positions
                   within your restaurant.
@@ -104,6 +107,7 @@ const Home = () => {
               </Modal>
             </Service>
             <Service title={"TRAINING & DEVELOPMENT"}>
+            
               <p className="px-5 text-2xl">
                 Klarity seeks to provide restaurant owners with a sense of
                 assurance and peace of mind by helping their team commit to
@@ -121,6 +125,7 @@ const Home = () => {
                 openModal={showServiceModal2}
                 onCloseModal={setShowServiceModal2}
               >
+                <h4 className="text-4xl mb-4 px-4">TRAINING & DEVELOPMENT</h4>
                 <p className="md:text-2xl mb-4 px-4">
                   Training in the restaurant industry is crucial for your staff
                   to perform effectively, beyond just dedication. Exceptional
@@ -160,6 +165,7 @@ const Home = () => {
                 openModal={showServiceModal3}
                 onCloseModal={setShowServiceModal3}
               >
+                <h4 className="text-4xl mb-4 px-4">QUALITY ASSURANCE</h4>
                 <p className="md:text-2xl mb-4 px-4">
                   Your restaurant carries a significant responsibility to
                   maintain strict safety protocols to minimize health risks for

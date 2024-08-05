@@ -5,10 +5,10 @@ const About = () => {
     <>
       <div className="flex flex-col-reverse md:flex-row h-full bg-gold md:mt-16 lg:mt-36">
         <div className="w-auto md:w-1/2 h-full my-8 md:p-24 text-center">
-           <img className='w-full max-w-full my-auto ' src={headshot} />
+           <img className='w-full max-w-full my-auto px-8 md:px-0' src={headshot} />
            
         </div>
-        <div className="w-auto p-16 lg:p-24 text-left text-white flex-1 lg:px-16">
+        <div className="w-auto pt-16 px-8 lg:p-24 text-left text-white flex-1 lg:px-16">
           <h1 className='my-8'>ABOUT</h1>
           <p className='mb-4 text-2xl'>
             <span className='text-4xl'>Brian Burchill</span>, Founder of Klarity is a native of New York. He
