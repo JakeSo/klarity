@@ -38,10 +38,19 @@ export const ContactForm = (props) => {
   //   ));
   // }
 
+  emailjs.init({
+    publicKey: 'r_muFh9yesSMaZE0X',
+    blockHeadless: true,
+    limitRate: {
+      id: 'app',
+      throttle: 10000,
+    }
+  })
+
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("service-", "template_ozcpc2h", form.current)
+      .sendForm("service-3636", "template_ozcpc2h", form.current)
       .then(() => setSubmitted(true))
       .catch((error) => console.error(error));
   };

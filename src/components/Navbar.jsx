@@ -60,7 +60,8 @@ const Navbar = () => {
         <button className="text-white absolute top-5 right-5" onClick={toggleMenu}>
           &times;
         </button>
-        <ul className="flex flex-col items-center mt-20 space-y-8">
+        <ul className="flex flex-col items-center mt-20 ">
+        <li className="my-auto"><NavLink to="/klarity/About/" className="text-white">About</NavLink></li>
           <li><Button id='contact-btn' className="p-4" size={""} onClick={() => setOpenModal(true)}>Contact Us</Button></li>
             {/* <li><NavLink to="/About" className="text-white py-2">About</NavLink></li>
             <li>
