@@ -10,11 +10,11 @@ const router = createBrowserRouter([
   errorElement: <ErrorPage />,
   children: [
     {
-      path: '/klarity/',
+      path: '/',
       element: <Home />
     },
     {
-      path: '/klarity/about',
+      path: '/about',
       element: <About />
     }
   ]
