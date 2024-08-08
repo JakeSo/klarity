@@ -5,7 +5,7 @@ import { ContactForm } from "../components/ContactForm.jsx";
 import logo from "../assets/1.svg";
 import banner from "../assets/banner.mp4";
 import serviceVideo1 from "../assets/SERVICE_VIDEO1.gif"
-import onions from "../assets/PIC 1.mp4";
+import serviceVideo2 from "../assets/SERVICE_VIDEO2.gif"
 import { Modal } from "../components/Modal.jsx";
 import { whyUsSections, serviceContent } from "../content/content.js";
 import { useState } from "react";
@@ -267,7 +267,7 @@ const Home = () => {
         <div className="w-full h-full md:w-1/2 bg-gray-400 ">
           <img
             className="w-full"
-            src="https://placehold.co/1000x1000?text=1:1"
+            src={serviceVideo2}
           ></img>
         </div>
       </div>
