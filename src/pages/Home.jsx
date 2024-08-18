@@ -3,12 +3,14 @@ import Service from "../components/Service.jsx";
 import Button from "../components/Button.jsx";
 import { ContactForm } from "../components/ContactForm.jsx";
 import logo from "../assets/1.svg";
-import banner from "../assets/banner.mp4";
-import serviceVideo1 from "../assets/SERVICE_VIDEO1.gif"
+import banner from "../assets/banner.gif";
+import restaurant1 from "../assets/restaurant_1.jpg"
+import restaurant3 from "../assets/restaurant_3.jpg"
 import serviceVideo2 from "../assets/SERVICE_VIDEO2.gif"
 import { Modal } from "../components/Modal.jsx";
 import { whyUsSections, serviceContent } from "../content/content.js";
 import { useState } from "react";
+import ImageUnblur from "../components/ImageUnblur.jsx";
 
 const Home = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -22,15 +24,11 @@ const Home = () => {
         className="section banner flex justify-center"
         style={{ maxHeight: "720px" }}
       >
-        <video
-          className="absolute top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3"
-          autoPlay
-          muted
-          loop
-          disablePictureInPicture
+        <img
+          className="absolute w-full top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3"
+          src={banner}
         >
-          <source src={banner}></source>
-        </video>
+        </img>
       </div>
       <div className="section flex flex-wrap min-h-full w-full items-baseline">
         <div className="w-full h-full pb-16 px-4 md:px-10 md:w-2/3 text-center my-auto">
@@ -44,7 +42,7 @@ const Home = () => {
           </h1>
         </div>
         <div className="w-full h-full md:w-1/3">
-        <img className="w-full" src={serviceVideo1} />
+        <ImageUnblur src={restaurant1} alt="dining room" />
           {/* <video className="w-full" autoPlay muted loop disablePictureInPicture>
             <source src={onions}></source>
           </video> */}
@@ -207,7 +205,6 @@ const Home = () => {
           {whyUsSections.map((section) => (
             <PhotoCard
               key={section.id}
-              img={`../assets/photoCard${section.id}.png`}
               {...section}
             />
           ))}
@@ -265,10 +262,7 @@ const Home = () => {
           />
         </div>
         <div className="w-full h-full md:w-1/2 bg-gray-400 ">
-          <img
-            className="w-full"
-            src={serviceVideo2}
-          ></img>
+          <ImageUnblur src={restaurant3} alt="dining room" />
         </div>
       </div>
     </div>
