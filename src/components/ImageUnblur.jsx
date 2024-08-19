@@ -7,12 +7,12 @@ const ImageUnblur = ({ src, alt }) => {
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                if (entry.intersectionRatio === 1) {
+                if (entry.intersectionRatio >= 0.75) {
                     entry.target.classList.add('in-view');
                     observer.unobserve(entry.target); // Stop observing once the image is in view
                 }
             });
-        }, { threshold : 1.0});
+        }, { threshold : 0.75});
 
         if (imageRef.current) {
             observer.observe(imageRef.current);

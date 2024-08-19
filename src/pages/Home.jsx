@@ -42,7 +42,7 @@ const Home = () => {
           </h1>
         </div>
         <div className="w-full h-full md:w-1/3">
-        <ImageUnblur src={restaurant1} alt="dining room" />
+          <ImageUnblur src={restaurant1} alt="dining room" />
           {/* <video className="w-full" autoPlay muted loop disablePictureInPicture>
             <source src={onions}></source>
           </video> */}
@@ -105,7 +105,7 @@ const Home = () => {
               </Modal>
             </Service>
             <Service title={"TRAINING & DEVELOPMENT"}>
-            
+
               <p className="px-5 text-2xl">
                 Klarity seeks to provide restaurant owners with a sense of
                 assurance and peace of mind by helping their team commit to
@@ -244,28 +244,35 @@ const Home = () => {
               night.
             </li>
           </ul>
-          <h3 className="text-2xl my-4">
-            Let&apos;s work together to unlock the full potential of your
-            business and create unforgettable experiences for your guests.
-          </h3>
-          <Button
-            id="contact-btn"
-            className="p-4 mt-4"
-            size={"4xl"}
-            onClick={() => setShowContactForm(true)}
-          >
-            Contact Us
-          </Button>
-          <ContactForm
-            openModal={showContactForm}
-            onCloseModal={setShowContactForm}
-          />
         </div>
-        <div className="w-full h-full md:w-1/2 bg-gray-400 ">
+        <div className="w-full h-full md:w-1/2 ">
           <ImageUnblur src={restaurant3} alt="dining room" />
         </div>
+        <div className="w-full md:w-2/3 mx-auto">
+          <div className="p-6 md:px-2 text-center">
+            <h3 className="text-4xl my-2">
+              Let&apos;s work together to unlock the full potential of your
+              business and create unforgettable experiences for your guests:
+            </h3>
+          </div>
+          <div className="text-center py-4">
+            <Button
+              id="contact-btn"
+              className="p-4 mx-auto font-semibold"
+              size={"4xl"}
+              onClick={() => setShowContactForm(true)}
+            >
+              Contact Us
+            </Button>
+            <ContactForm
+              openModal={showContactForm}
+              onCloseModal={setShowContactForm}
+            />
+          </div>
+        </div>
+
       </div>
-    </div>
+    </div >
   );
 };
 
