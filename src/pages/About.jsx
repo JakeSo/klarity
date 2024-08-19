@@ -3,10 +3,9 @@ import headshot from '../assets/headshot.jpg';
 const About = () => {
   return (
     <>
-      <div className="flex flex-col-reverse md:flex-row h-full bg-gold md:mt-16 lg:mt-36">
-        <div className="w-auto md:w-1/2 h-full my-8 md:p-24 text-center">
-           <img className='w-full max-w-full my-auto px-8 md:px-0' src={headshot} />
-           
+      <div className="flex flex-col-reverse items-stretch md:flex-row h-full md:px-10">
+        <div className="w-auto md:w-1/3 self-center pt-16 my-8 text-center">
+           <img className='w-full max-w-96 my-auto mx-auto px-8 md:px-0' src={headshot} />
         </div>
         <div className="w-auto pt-16 px-8 lg:p-24 text-left text-white flex-1 lg:px-16">
           <h1 className='my-8'>ABOUT</h1>

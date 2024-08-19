@@ -1,10 +1,13 @@
-
+import { createPortal } from "react-dom";
 import { Modal as FlowbiteModal } from "flowbite-react";
 
 
 
 
 const modalTheme = {
+  content: {
+    inner:  "relative flex max-h-[90dvh] flex-col rounded-lg bg-white shadow dark:bg-black"
+  },
   header: {
     base: "flex items-start justify-between rounded-t border-0 p-5 dark:border-transparent"
 

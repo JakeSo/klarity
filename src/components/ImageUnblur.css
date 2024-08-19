@@ -1,0 +1,13 @@
+.image-container {
+    overflow: hidden;
+}
+
+.blur-image {
+    width: 100%;
+    filter: blur(10px);
+    transition: filter 1s ease-out;
+}
+
+.blur-image.in-view {
+    filter: blur(0);
+}

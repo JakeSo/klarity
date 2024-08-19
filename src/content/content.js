@@ -1,6 +1,6 @@
-import photoCard1 from '../assets/photoCard1.png';
-import photoCard2 from '../assets/photoCard2.png';
-import photoCard3 from '../assets/photoCard3.png';
+import photoCard1 from '../assets/photoCard1.jpg';
+import photoCard2 from '../assets/photoCard2.jpg';
+import photoCard3 from '../assets/photoCard3.jpg';
 
 export const whyUsSections = [
     {
