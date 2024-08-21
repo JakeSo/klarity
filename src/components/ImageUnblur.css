@@ -5,7 +5,7 @@
 .blur-image {
     width: 100%;
     filter: blur(10px);
-    transition: filter 1s ease-out;
+    transition: filter 2s ease-out;
 }
 
 .blur-image.in-view {
