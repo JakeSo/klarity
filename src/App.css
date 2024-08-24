@@ -4,7 +4,7 @@
   
 }
 html {
-  scroll-padding-top: 84px;
+  scroll-padding-top: 0px;
 }
 .slide-in {
   animation: slide-in 1s;
@@ -93,7 +93,7 @@ a:hover, a:focus {
 
 
 #goalsList li::marker {
-  content: "\2713  ";
+  content: "\2713\00A0";
   margin: 100%;
   color: rgb(255,170,22);
 }
