@@ -1,18 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import './ImageUnblur.css';
 
 const ImageUnblur = ({ src, alt }) => {
     const imageRef = useRef(null);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                if (entry.intersectionRatio >= 0.75) {
+                if (entry.intersectionRatio >= 0.8) {
                     entry.target.classList.add('in-view');
                     observer.unobserve(entry.target); // Stop observing once the image is in view
                 }
             });
-        }, { threshold : 0.75});
+        }, { threshold : 0.8});
 
         if (imageRef.current) {
             observer.observe(imageRef.current);

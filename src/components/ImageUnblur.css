@@ -4,10 +4,13 @@
 
 .blur-image {
     width: 100%;
+    -webkit-filter: blur(10px);
     filter: blur(10px);
+    -webkit-transition: -webkit-filter 2s ease-out;
     transition: filter 2s ease-out;
 }
 
 .blur-image.in-view {
+    -webkit-filter: blur(0);
     filter: blur(0);
 }
