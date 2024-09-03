@@ -6,9 +6,8 @@ import logo from "../assets/1.svg";
 import banner from "../assets/banner.gif";
 import restaurant1 from "../assets/restaurant_1.jpg"
 import restaurant3 from "../assets/restaurant_3.jpg"
-import serviceVideo2 from "../assets/SERVICE_VIDEO2.gif"
 import { Modal } from "../components/Modal.jsx";
-import { whyUsSections, serviceContent } from "../content/content.js";
+import { whyUsSections } from "../content/content.js";
 import { useState } from "react";
 import ImageUnblur from "../components/ImageUnblur.jsx";
 
@@ -38,7 +37,7 @@ const Home = () => {
             className="mx-auto w-32 py-6 md:w-44 md:py-10"
           ></img>
           <h1 className="px-4 text-5xl md:text-6xl">
-            HELPING RESTAURANTS THRIVE IN AN EVER-EVOLVING INDUSTRY
+            HELPING RESTAURANTS FIND FOCUS IN AN EVER-EVOLVING INDUSTRY
           </h1>
         </div>
         <div className="w-full h-full md:w-1/3">
