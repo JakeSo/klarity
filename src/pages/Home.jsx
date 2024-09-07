@@ -10,6 +10,7 @@ import { Modal } from "../components/Modal.jsx";
 import { whyUsSections } from "../content/content.js";
 import { useState } from "react";
 import ImageUnblur from "../components/ImageUnblur.jsx";
+import accoladeLogos from "../assets/Accolades";
 
 const Home = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -49,10 +50,9 @@ const Home = () => {
       </div>
       <div className="section text-center py-16 px-4 md:px-28">
         <h2 className="italic">
-          Our mission is to elevate dining experiences by providing expert
-          advice, fostering culinary creativity, optimizing sustainable
-          practices, and delivering exceptional quality and hospitality to
-          fulfill your guests outstanding experience
+        Our mission is to elevate dining experiences by providing expert advice, optimizing
+sustainable practices, fostering culinary creativity, and delivering exceptional quality
+and hospitality to fulfill your guests outstanding experience
         </h2>
       </div>
       <div id="Services" className="section flex flex-wrap scroll-pt-8">
@@ -209,7 +209,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div id="Contact" className="section flex flex-wrap">
+      <div className="section flex flex-wrap">
         <div className="w-full h-full p-10 md:w-1/2 md:h-2/3 my-auto text-center">
           {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
           <h1 className="uppercase pb-8 text-5xl md:text-6xl">
@@ -247,7 +247,14 @@ const Home = () => {
         <div className="w-full h-full md:w-1/2 ">
           <ImageUnblur src={restaurant3} alt="dining room" />
         </div>
-        <div className="w-full md:w-2/3 mx-auto">
+      </div>
+      <div id="Accolades" className="section p-6 text-center">
+        <h1 className="uppercase my-2">Featured</h1>
+        <ul className="flex flex-row gap-3  justify-center items-center">
+          {accoladeLogos.map((logo, index) => <li key={index}><img className="w-[200px]" src={logo}></img></li>)}
+        </ul>
+      </div>
+      <div id="Contact" className="w-full md:w-2/3 mx-auto">
           <div className="p-6 md:px-2 text-center">
             <h3 className="text-4xl my-2">
               Let&apos;s work together to unlock the full potential of your
@@ -269,8 +276,7 @@ const Home = () => {
             />
           </div>
         </div>
-
-      </div>
+      
     </div >
   );
 };
