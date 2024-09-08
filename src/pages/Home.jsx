@@ -11,6 +11,8 @@ import { whyUsSections } from "../content/content.js";
 import { useState } from "react";
 import ImageUnblur from "../components/ImageUnblur.jsx";
 import accoladeLogos from "../assets/Accolades";
+import kitchen1 from "../assets/kitchen-1.jpg";
+import kitchen2 from "../assets/kitchen-3.jpg";
 
 const Home = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -48,8 +50,8 @@ const Home = () => {
           </video> */}
         </div>
       </div>
-      <div className="section text-center py-16 px-4 md:px-28">
-        <h2 className="italic">
+      <div className="section text-center py-16 px-4 md:px-28 h-96 md:bg-fixed" style={{backgroundImage: `url(${kitchen1})`}}>
+        <h2 className="italic bg-opacity-65 p-12 h-full rounded-lg my-auto bg-black content-center" style={{textShadow: "2px 2px 4px black"}}>
         Our mission is to elevate dining experiences by providing expert advice, optimizing
 sustainable practices, fostering culinary creativity, and delivering exceptional quality
 and hospitality to fulfill your guests outstanding experience
@@ -58,7 +60,7 @@ and hospitality to fulfill your guests outstanding experience
       <div id="Services" className="section flex flex-wrap scroll-pt-8">
         <div className="w-full h-full text-left p-8">
           <h1 className="uppercase text-center">Our Services</h1>
-          <div className="w-full mt-10 flex flex-col md:flex-row justify-evenly h-4/5">
+          <div className="w-full mt-10 grid grid-cols-3 grid-rows-1 h-4/5">
             <Service title="CONSULTING">
               <p className="px-5 text-2xl">
                 {" "}
@@ -249,14 +251,19 @@ and hospitality to fulfill your guests outstanding experience
         </div>
       </div>
       <div id="Accolades" className="section p-6 text-center">
-        <h1 className="uppercase my-2">Featured</h1>
-        <ul className="flex flex-row gap-3  justify-center items-center">
-          {accoladeLogos.map((logo, index) => <li key={index}><img className="w-[200px]" src={logo}></img></li>)}
+        <h1 className="uppercase my-7">Featured</h1>
+        <ul className="flex flex-row gap-3 px-16 justify-center items-center">
+          {accoladeLogos.map((accolade, index) => 
+            <li key={index}>
+              <a href={accolade.url}>
+                <img className="w-[200px]" src={accolade.logo}></img>
+              </a>
+            </li>)}
         </ul>
       </div>
-      <div id="Contact" className="w-full md:w-2/3 mx-auto">
-          <div className="p-6 md:px-2 text-center">
-            <h3 className="text-4xl my-2">
+      <div id="Contact" className="w-full h-96 bg-fixed bg-center bg-cover" style={{backgroundImage: `url(${kitchen2})`}}>
+          <div className="p-6 md:px-2 md:w-2/3 text-center mx-auto">
+            <h3 className="text-4xl my-auto">
               Let&apos;s work together to unlock the full potential of your
               business and create unforgettable experiences for your guests:
             </h3>
@@ -264,7 +271,7 @@ and hospitality to fulfill your guests outstanding experience
           <div className="text-center py-4">
             <Button
               id="contact-btn"
-              className="p-4 mx-auto font-semibold"
+              className="p-4 mx-auto font-semibold bg-black hover:bg-gold focus:bg-gold hover:text-black focus:text-black"
               size={"4xl"}
               onClick={() => setShowContactForm(true)}
             >

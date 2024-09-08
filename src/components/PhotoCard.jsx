@@ -5,7 +5,7 @@ const PhotoCard = ({ id, img, title, description }) => {
     <div key={id} className="photoCard w-full md:w-1/3 h-full" style={{ aspectRatio: "3/4" }}>
       <div className='photoCard-inner relative w-full h-full'>
         <div className='photoCard-front absolute w-full h-full bg-no-repeat bg-cover' style={{ backgroundImage: `url(${img})` }}>
-          <div className='grid h-full bg-black bg-opacity-35 place-items-center'>
+          <div className='grid h-full bg-black bg-opacity-15 place-items-center'>
             <div className="stain max-w-80">
               <h2 className="px-12 drop-shadow">{title}</h2>
             </div>
