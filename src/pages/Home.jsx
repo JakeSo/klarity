@@ -50,7 +50,7 @@ const Home = () => {
           </video> */}
         </div>
       </div>
-      <div className="section text-center py-16 px-4 md:px-28 h-96 md:bg-fixed" style={{backgroundImage: `url(${kitchen1})`}}>
+      <div className="section text-center py-16 px-4 md:px-28 bg-cover bg-center min-h-96 md:bg-fixed" style={{backgroundImage: `url(${kitchen1})`}}>
         <h2 className="italic bg-opacity-65 p-12 h-full rounded-lg my-auto bg-black content-center" style={{textShadow: "2px 2px 4px black"}}>
         Our mission is to elevate dining experiences by providing expert advice, optimizing
 sustainable practices, fostering culinary creativity, and delivering exceptional quality
@@ -60,7 +60,7 @@ and hospitality to fulfill your guests outstanding experience
       <div id="Services" className="section flex flex-wrap scroll-pt-8">
         <div className="w-full h-full text-left p-8">
           <h1 className="uppercase text-center">Our Services</h1>
-          <div className="w-full mt-10 grid grid-cols-3 grid-rows-1 h-4/5">
+          <div className="w-full mt-10 grid grid-cols-1 grid-rows-3 md:grid-cols-3 md:grid-rows-1 h-auto">
             <Service title="CONSULTING">
               <p className="px-5 text-2xl">
                 {" "}
@@ -70,7 +70,7 @@ and hospitality to fulfill your guests outstanding experience
                 issues.
               </p>
               <a
-                className="float-end py-2 text-gold"
+                className="ms-auto py-2 text-gold "
                 onClick={() => setShowServiceModal1(true)}
               >
                 Learn More...
@@ -115,7 +115,7 @@ and hospitality to fulfill your guests outstanding experience
                 owners.
               </p>
               <a
-                className="float-end py-2 text-gold"
+                className="ms-auto py-2 text-gold "
                 onClick={() => setShowServiceModal2(true)}
               >
                 Learn More...
@@ -155,7 +155,7 @@ and hospitality to fulfill your guests outstanding experience
                 visible issues and underlying complexities.
               </p>
               <a
-                className="float-end py-2 text-gold"
+                className="ms-auto py-2 text-gold"
                 onClick={() => setShowServiceModal3(true)}
               >
                 Learn More...
@@ -261,14 +261,13 @@ and hospitality to fulfill your guests outstanding experience
             </li>)}
         </ul>
       </div>
-      <div id="Contact" className="w-full h-96 bg-fixed bg-center bg-cover" style={{backgroundImage: `url(${kitchen2})`}}>
-          <div className="p-6 md:px-2 md:w-2/3 text-center mx-auto">
-            <h3 className="text-4xl my-auto">
+      <div id="Contact" className="w-full min-h-96 bg-fixed bg-center bg-cover" style={{backgroundImage: `url(${kitchen2})`}}>
+          <div className="md:px-2 md:w-2/3 text-center mx-auto bg-opacity-65 p-12 my-auto rounded-lg bg-black content-center">
+            <h3 className="text-4xl my-auto ">
               Let&apos;s work together to unlock the full potential of your
               business and create unforgettable experiences for your guests:
             </h3>
-          </div>
-          <div className="text-center py-4">
+            <div className="text-center py-4">
             <Button
               id="contact-btn"
               className="p-4 mx-auto font-semibold bg-black hover:bg-gold focus:bg-gold hover:text-black focus:text-black"
@@ -282,6 +281,8 @@ and hospitality to fulfill your guests outstanding experience
               onCloseModal={setShowContactForm}
             />
           </div>
+          </div>
+          
         </div>
       
     </div >
