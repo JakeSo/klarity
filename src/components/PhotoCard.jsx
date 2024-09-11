@@ -7,7 +7,7 @@ const PhotoCard = ({ id, img, title, description }) => {
         <div className='photoCard-front absolute w-full h-full bg-no-repeat bg-cover' style={{ backgroundImage: `url(${img})` }}>
           <div className='grid h-full bg-black bg-opacity-15 place-items-center'>
             <div className="stain max-w-80">
-              <h2 className="px-12 drop-shadow">{title}</h2>
+              <h2 className="px-12 text-shadow">{title}</h2>
             </div>
           </div>
         </div>

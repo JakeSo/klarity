@@ -32,8 +32,8 @@ html {
 
   #goalsList li {
 
-    padding: 1% 0;
-    list-style: disc inside;
+    padding: 2% 0;
+    list-style: disc ;
     
   }
 }
@@ -96,4 +96,8 @@ a:hover, a:focus {
   content: "\2713\00A0";
   margin: 100%;
   color: rgb(255,170,22);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px black;
 }

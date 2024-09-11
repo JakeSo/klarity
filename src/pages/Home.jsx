@@ -4,8 +4,8 @@ import Button from "../components/Button.jsx";
 import { ContactForm } from "../components/ContactForm.jsx";
 import logo from "../assets/1.svg";
 import banner from "../assets/banner.gif";
-import restaurant1 from "../assets/restaurant_1.jpg"
-import restaurant3 from "../assets/restaurant_3.jpg"
+import restaurant1 from "../assets/restaurant_1.jpg";
+import restaurant3 from "../assets/restaurant_3.jpg";
 import { Modal } from "../components/Modal.jsx";
 import { whyUsSections } from "../content/content.js";
 import { useState } from "react";
@@ -13,6 +13,7 @@ import ImageUnblur from "../components/ImageUnblur.jsx";
 import accoladeLogos from "../assets/Accolades";
 import kitchen1 from "../assets/kitchen-1.jpg";
 import kitchen2 from "../assets/kitchen-3.jpg";
+import ParallaxSection from "../components/ParallaxSection.jsx";
 
 const Home = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -29,8 +30,7 @@ const Home = () => {
         <img
           className="absolute w-full top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3"
           src={banner}
-        >
-        </img>
+        ></img>
       </div>
       <div className="section flex flex-wrap min-h-full w-full items-baseline">
         <div className="w-full h-full pb-16 px-4 md:px-10 md:w-2/3 text-center my-auto">
@@ -40,7 +40,7 @@ const Home = () => {
             className="mx-auto w-32 py-6 md:w-44 md:py-10"
           ></img>
           <h1 className="px-4 text-5xl md:text-6xl">
-            HELPING RESTAURANTS FIND FOCUS IN AN EVER-EVOLVING INDUSTRY
+            HELPING RESTAURANTS FIND <span className="text-gold">FOCUS</span> IN AN EVER-EVOLVING INDUSTRY
           </h1>
         </div>
         <div className="w-full h-full md:w-1/3">
@@ -50,17 +50,18 @@ const Home = () => {
           </video> */}
         </div>
       </div>
-      <div className="section text-center py-16 px-4 md:px-28 bg-cover bg-center min-h-96 md:bg-fixed" style={{backgroundImage: `url(${kitchen1})`}}>
-        <h2 className="italic bg-opacity-65 p-12 h-full rounded-lg my-auto bg-black content-center" style={{textShadow: "2px 2px 4px black"}}>
-        Our mission is to elevate dining experiences by providing expert advice, optimizing
-sustainable practices, fostering culinary creativity, and delivering exceptional quality
-and hospitality to fulfill your guests outstanding experience
+      <ParallaxSection img={kitchen1}>
+        <h2 className="italic text-5xl">
+          Our mission is to elevate dining experiences by providing expert
+          advice, optimizing sustainable practices, fostering culinary
+          creativity, and delivering exceptional quality and hospitality to
+          fulfill your guests outstanding experience.
         </h2>
-      </div>
+      </ParallaxSection>
       <div id="Services" className="section flex flex-wrap scroll-pt-8">
         <div className="w-full h-full text-left p-8">
-          <h1 className="uppercase text-center">Our Services</h1>
-          <div className="w-full mt-10 grid grid-cols-1 grid-rows-3 md:grid-cols-3 md:grid-rows-1 h-auto">
+          <h1 className="mt-8 text-center underline-offset-8 underline decoration-gold">OUR SERVICES</h1>
+          <div className="w-full mt-10 flex flex-col md:grid md:grid-cols-3 md:grid-rows-1 h-auto">
             <Service title="CONSULTING">
               <p className="px-5 text-2xl">
                 {" "}
@@ -106,7 +107,6 @@ and hospitality to fulfill your guests outstanding experience
               </Modal>
             </Service>
             <Service title={"TRAINING & DEVELOPMENT"}>
-
               <p className="px-5 text-2xl">
                 Klarity seeks to provide restaurant owners with a sense of
                 assurance and peace of mind by helping their team commit to
@@ -149,7 +149,7 @@ and hospitality to fulfill your guests outstanding experience
               </Modal>
             </Service>
             <Service title={"QUALITY ASSURANCE"}>
-              <p className="px-5 md:text-2xl">
+              <p className="px-5 text-2xl">
                 With our comprehensive approach, we address all aspects of your
                 business, providing confidence and security by addressing both
                 visible issues and underlying complexities.
@@ -201,18 +201,15 @@ and hospitality to fulfill your guests outstanding experience
           </div> */}
       </div>
       <div id="Why" className="section flex flex-wrap text-center">
-        <h1 className="mb-8 my-10 px-4 mx-auto">WHY CHOOSE US?</h1>
+        <h1 className="mb-8 my-10 px-4 mx-auto underline-offset-8 underline decoration-gold">WHY CHOOSE US?</h1>
         <div className="flex justify-center flex-col flex-wrap md:flex-row w-full h-full">
           {whyUsSections.map((section) => (
-            <PhotoCard
-              key={section.id}
-              {...section}
-            />
+            <PhotoCard key={section.id} {...section} />
           ))}
         </div>
       </div>
-      <div className="section flex flex-wrap">
-        <div className="w-full h-full p-10 md:w-1/2 md:h-2/3 my-auto text-center">
+      <div className="section flex flex-col xl:flex-row">
+        <div className="w-full h-full p-16 md:p-10  md:h-2/3 my-auto text-center">
           {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
           <h1 className="uppercase pb-8 text-5xl md:text-6xl">
             Let&apos;s take your restaurant to the{" "}
@@ -223,10 +220,7 @@ and hospitality to fulfill your guests outstanding experience
             their restaurant team is committed to their success. Our goal is to
             eliminate those sleepless nights by:
           </h2>
-          <ul
-            id="goalsList"
-            className="list-disc text-left list-inside text-2xl md:px-16 py-2"
-          >
+          <ul id="goalsList" className="text-left text-2xl md:px-16 lg:px-32 py-2">
             <li>
               Ensuring your restaurant generates profits and fills you with
               pride.
@@ -246,46 +240,43 @@ and hospitality to fulfill your guests outstanding experience
             </li>
           </ul>
         </div>
-        <div className="w-full h-full md:w-1/2 ">
+        <div className="w-full h-full ">
           <ImageUnblur src={restaurant3} alt="dining room" />
         </div>
       </div>
       <div id="Accolades" className="section p-6 text-center">
-        <h1 className="uppercase my-7">Featured</h1>
-        <ul className="flex flex-row gap-3 px-16 justify-center items-center">
-          {accoladeLogos.map((accolade, index) => 
+        <h1 className="my-7 underline-offset-8 underline decoration-gold">FEATURED</h1>
+        <ul className="flex flex-row flex-wrap gap-3 px-16 my-8 justify-center items-center">
+          {accoladeLogos.map((accolade, index) => (
             <li key={index}>
               <a href={accolade.url}>
                 <img className="w-[200px]" src={accolade.logo}></img>
               </a>
-            </li>)}
+            </li>
+          ))}
         </ul>
       </div>
-      <div id="Contact" className="w-full min-h-96 bg-fixed bg-center bg-cover" style={{backgroundImage: `url(${kitchen2})`}}>
-          <div className="md:px-2 md:w-2/3 text-center mx-auto bg-opacity-65 p-12 my-auto rounded-lg bg-black content-center">
-            <h3 className="text-4xl my-auto ">
-              Let&apos;s work together to unlock the full potential of your
-              business and create unforgettable experiences for your guests:
-            </h3>
-            <div className="text-center py-4">
-            <Button
-              id="contact-btn"
-              className="p-4 mx-auto font-semibold bg-black hover:bg-gold focus:bg-gold hover:text-black focus:text-black"
-              size={"4xl"}
-              onClick={() => setShowContactForm(true)}
-            >
-              Contact Us
-            </Button>
-            <ContactForm
-              openModal={showContactForm}
-              onCloseModal={setShowContactForm}
-            />
-          </div>
-          </div>
-          
+      <ParallaxSection img={kitchen2}>
+        <h2 className="my-auto mb-4 text-5xl">
+          Let&apos;s work together to unlock the full potential of your business
+          and create unforgettable experiences for your guests:
+        </h2>
+        <div className="text-center py-4">
+          <Button
+            id="contact-btn"
+            className="p-6 mx-auto font-semibold bg-black hover:bg-gold focus:bg-gold hover:text-black focus:text-black"
+            size={"4xl"}
+            onClick={() => setShowContactForm(true)}
+          >
+            Get Started
+          </Button>
+          <ContactForm
+            openModal={showContactForm}
+            onCloseModal={setShowContactForm}
+          />
         </div>
-      
-    </div >
+      </ParallaxSection>
+    </div>
   );
 };
 

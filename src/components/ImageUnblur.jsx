@@ -9,7 +9,8 @@ const ImageUnblur = ({ src, alt }) => {
             entries.forEach((entry) => {
                 if (entry.intersectionRatio >= 0.8) {
                     entry.target.classList.add('in-view');
-                    observer.unobserve(entry.target); // Stop observing once the image is in view
+                } else {
+                    entry.target.classList.remove('in-view');
                 }
             });
         }, { threshold : 0.8});
