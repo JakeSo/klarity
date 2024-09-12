@@ -39,7 +39,7 @@ const Home = () => {
             alt="Klarity logo"
             className="mx-auto w-32 py-6 md:w-44 md:py-10"
           ></img>
-          <h1 className="px-4 text-5xl md:text-6xl">
+          <h1 className="md:px-4 text-5xl md:text-6xl">
             HELPING RESTAURANTS FIND <span className="text-gold">FOCUS</span> IN AN EVER-EVOLVING INDUSTRY
           </h1>
         </div>
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </div>
       <ParallaxSection img={kitchen1}>
-        <h2 className="italic text-5xl">
+        <h2 className="italic md:text-5xl">
           Our mission is to elevate dining experiences by providing expert
           advice, optimizing sustainable practices, fostering culinary
           creativity, and delivering exceptional quality and hospitality to
@@ -209,7 +209,7 @@ const Home = () => {
         </div>
       </div>
       <div className="section flex flex-col xl:flex-row">
-        <div className="w-full h-full p-16 md:p-10  md:h-2/3 my-auto text-center">
+        <div className="w-full h-full p-10   md:h-2/3 my-auto text-center">
           {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
           <h1 className="uppercase pb-8 text-5xl md:text-6xl">
             Let&apos;s take your restaurant to the{" "}
@@ -257,7 +257,7 @@ const Home = () => {
         </ul>
       </div>
       <ParallaxSection img={kitchen2}>
-        <h2 className="my-auto mb-4 text-5xl">
+        <h2 className="my-auto mb-4 md:text-5xl">
           Let&apos;s work together to unlock the full potential of your business
           and create unforgettable experiences for your guests:
         </h2>
