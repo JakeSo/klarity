@@ -4,7 +4,7 @@
   
 }
 html {
-  scroll-padding-top: 84px;
+  scroll-padding-top: 0px;
 }
 .slide-in {
   animation: slide-in 1s;
@@ -18,9 +18,23 @@ html {
   height: 33vh;
 }
 
+#goalsList li {
+
+  padding: 4% 0;
+  list-style: disc inside;
+  
+}
+
 @media only screen and (min-width:800px) {
   .banner {
     height: 50vh;
+  }
+
+  #goalsList li {
+
+    padding: 2% 0;
+    list-style: disc ;
+    
   }
 }
 
@@ -74,4 +88,16 @@ html {
 a:hover, a:focus {
   text-decoration: underline rgb(255,170,22);
 
+}
+
+
+
+#goalsList li::marker {
+  content: "\2713\00A0";
+  margin: 100%;
+  color: rgb(255,170,22);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px black;
 }
