@@ -15,7 +15,6 @@ const modalTheme = {
 }
 
 export function Modal({openModal, onCloseModal, children, ...rest}) {
-  console.log(onCloseModal);
 
   return (
       <FlowbiteModal className="bg-gray-950 slide-in " show={openModal} onClose={() => onCloseModal(false)} theme={modalTheme} popup {...rest}>

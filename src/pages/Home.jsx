@@ -3,7 +3,7 @@ import Service from "../components/Service.jsx";
 import Button from "../components/Button.jsx";
 import { ContactForm } from "../components/ContactForm.jsx";
 import logo from "../assets/1.svg";
-import banner from "../assets/banner.gif";
+import banner from "../assets/banner.mp4";
 import restaurant1 from "../assets/restaurant_1.jpg";
 import restaurant3 from "../assets/restaurant_3.jpg";
 import { Modal } from "../components/Modal.jsx";
@@ -27,10 +27,11 @@ const Home = () => {
         className="section banner flex justify-center"
         style={{ maxHeight: "720px" }}
       >
-        <img
+        <video
           className="absolute w-full top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3"
           src={banner}
-        ></img>
+          autoPlay
+        />
       </div>
       <div className="section flex flex-wrap min-h-full w-full items-baseline">
         <div className="w-full h-full pb-16 px-4 md:px-10 md:w-2/3 text-center my-auto">
