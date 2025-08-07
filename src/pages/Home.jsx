@@ -25,7 +25,7 @@ const Home = () => {
     <div>
       <div
         className="section banner flex justify-center"
-        style={{ maxHeight: "720px" }}
+        style={{ maxHeight: "800px" }}
       >
         <img
           className="absolute w-full top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3"
@@ -37,9 +37,9 @@ const Home = () => {
           <img
             src={logo}
             alt="Klarity logo"
-            className="mx-auto w-32 py-6 md:w-44 md:py-10"
+            className="mx-auto w-32 py-6 md:w-44 md:py-1"
           ></img>
-          <h1 className="md:px-4 text-5xl md:text-6xl">
+          <h1 className="md:px-4 text-5xl">
             HELPING RESTAURANTS FIND <span className="text-gold">FOCUS</span> IN AN EVER-EVOLVING INDUSTRY
           </h1>
         </div>
@@ -59,9 +59,9 @@ const Home = () => {
         </h2>
       </ParallaxSection>
       <div id="Services" className="section flex flex-wrap scroll-pt-8">
-        <div className="w-full h-full text-left p-8">
+        <div className="w-full h-fit text-left p-8">
           <h1 className="mt-8 text-center underline-offset-8 underline decoration-gold">OUR SERVICES</h1>
-          <div className="w-full mt-10 flex flex-col md:grid md:grid-cols-3 md:grid-rows-1 h-auto">
+          <div className="w-full mt-10 flex flex-col md:grid md:grid-cols-3 md:grid-rows-1 h-2/3 lg:max-h-[600px]">
             <Service title="CONSULTING">
               <p className="px-5 text-2xl">
                 {" "}
@@ -211,7 +211,7 @@ const Home = () => {
       <div className="section flex flex-col xl:flex-row">
         <div className="w-full h-full p-10   md:h-2/3 my-auto text-center">
           {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
-          <h1 className="uppercase pb-8 text-5xl md:text-6xl">
+          <h1 className="uppercase pb-8 text-5xl">
             Let&apos;s take your restaurant to the{" "}
             <span className="text-gold">highest level</span>!
           </h1>
@@ -220,7 +220,7 @@ const Home = () => {
             their restaurant team is committed to their success. Our goal is to
             eliminate those sleepless nights by:
           </h2>
-          <ul id="goalsList" className="text-left text-2xl md:px-16 lg:px-32 py-2">
+          <ul id="goalsList" className="text-left text-2xl md:px-16  py-1">
             <li>
               Ensuring your restaurant generates profits and fills you with
               pride.

@@ -28,7 +28,7 @@ const ImageUnblur = ({ src, alt }) => {
 
     return (
         <div className="image-container">
-            <img ref={imageRef} src={src} alt={alt || "Klarity Restaurant Advisors image"} className="blur-image" />
+            <img ref={imageRef} src={src} alt={alt || "Klarity Restaurant Advisors image"} className="blur-image" loading='lazy' />
         </div>
     );
 };
