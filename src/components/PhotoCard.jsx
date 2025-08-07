@@ -2,7 +2,7 @@ import './PhotoCard.css';
 
 const PhotoCard = ({ id, img, title, description }) => {
   return (
-    <div key={id} className="photoCard w-full md:w-1/3 h-full" style={{ aspectRatio: "3/4" }}>
+    <article key={id} className="photoCard w-full md:w-1/3 h-full" style={{ aspectRatio: "3/4" }}>
       <div className='photoCard-inner relative w-full h-full'>
         <div className='photoCard-front absolute w-full h-full bg-no-repeat bg-cover' style={{ backgroundImage: `url(${img})` }}>
           <div className='grid h-full bg-black bg-opacity-15 place-items-center'>
@@ -12,15 +12,12 @@ const PhotoCard = ({ id, img, title, description }) => {
           </div>
         </div>
         <div className='photoCard-back absolute inset-0 grid w-full h-full place-items-center bg-gold text-center'>
-          <p className="text-4xl md:text-6xl px-8">
+          <p className="text-4xl md:text-5xl px-8">
             {description}
           </p>
         </div>
-
-
-
       </div>
-    </div>
+    </article>
   )
 }
 

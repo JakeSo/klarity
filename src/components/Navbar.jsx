@@ -30,7 +30,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black fixed top-0 left-0 w-full py-5 z-10">
+    <nav className="bg-black fixed top-0 left-0 w-full py-3 z-10">
       <div className="flex items-center justify-between px-8">
         <div className="brand w-1/3 md:w-1/6">
           <NavLink to="/"><img title="logo" src={logo} className="lg:w-full max-w-40 md:w-1/2" alt="Klarity Logo"  onClick={scrollToTop}/></NavLink>
@@ -43,8 +43,8 @@ const Navbar = () => {
         </button>
         <div className="nav-links hidden lg:flex lg:items-center">
           <ul className="flex flex-row space-x-8">
-          <li className="my-auto"><NavLink onClick={scrollToTop} to="/About/" className="text-white py-2 text-3xl">About</NavLink></li>
-          <li className="my-auto"><Button id='contact-btn' className="p-4 " size={"3xl"} onClick={() => setOpenModal(true)}>Contact Us</Button></li>
+          <li className="my-auto"><NavLink onClick={scrollToTop} to="/About/" className="text-white py-2 text-2xl">About</NavLink></li>
+          <li className="my-auto"><Button id='contact-btn' className="p-4 " size={"2xl"} onClick={() => setOpenModal(true)}>Contact Us</Button></li>
           
              {/* 
              <li>
