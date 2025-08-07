@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://klarityrestaurantadvisors.com/sitemap.xml
