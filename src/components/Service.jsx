@@ -10,11 +10,11 @@ const Service = ({title, children}) => {
     }
 
     return (
-        <div className="service my-3 h-2/3 md:grid md:grid-cols-1 md:grid-rows-3">
-            <div className="stain w-full h-full max-w-80 my-4 mb-16 justify-center mx-auto row-span-2">
-                <h2 className="text-3xl">{title}</h2>
+        <div className="service my-3 md:grid md:grid-cols-1 md:grid-rows-2">
+            <div className="stain w-full max-w-80 my-4 mb-4 justify-flex-start mx-auto ">
+                <h2 className="text-3xl" aria-label={title}>{title}</h2>
             </div>
-            <div className="row-span-1 flex flex-col justify-between">
+            <div className="flex flex-col h-fit mt-4">
                 {children}
             </div>
         </div>

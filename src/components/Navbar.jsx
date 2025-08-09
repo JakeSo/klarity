@@ -30,10 +30,19 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black fixed top-0 left-0 w-full py-3 z-10">
+    <nav className="bg-black fixed top-0 left-0 w-full py-2 z-10">
       <div className="flex items-center justify-between px-8">
         <div className="brand w-1/3 md:w-1/6">
-          <NavLink to="/"><img title="logo" src={logo} className="lg:w-full max-w-40 md:w-1/2" alt="Klarity Logo"  onClick={scrollToTop}/></NavLink>
+          <NavLink to="/">
+            <img 
+              title="Klarity Restaurant Advisors logo" 
+              src={logo} 
+              className="lg:w-full max-w-40 md:w-1/2" 
+              alt="Klarity Restaurant Advisors logo"  
+              aria-label="Klarity Restaurant Advisors logo" 
+              onClick={scrollToTop}
+            />
+          </NavLink>
         </div>
         <button 
           className="text-white lg:hidden" 
@@ -79,7 +88,7 @@ const Navbar = () => {
             <li><NavLink to="/Blog" className="text-white py-2">Blog</NavLink></li> */}
           </ul>
       </div>
-      <ContactForm openModal={openModal} onCloseModal={setOpenModal} />
+      <ContactForm openModal={openModal} onCloseModal={setOpenModal} role="dialog" aria-label="Contact form modal" />
     </nav>
     
   );

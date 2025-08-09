@@ -18,7 +18,7 @@ export function Modal({openModal, onCloseModal, children, ...rest}) {
   console.log(onCloseModal);
 
   return (
-      <FlowbiteModal className="bg-gray-950 slide-in " show={openModal} onClose={() => onCloseModal(false)} theme={modalTheme} popup {...rest}>
+      <FlowbiteModal className="bg-gray-950 slide-in " show={openModal} onClose={() => onCloseModal(false)} theme={modalTheme} popup {...rest} role="dialog" aria-modal="true">
         <FlowbiteModal.Header className="bg-black " />
         <FlowbiteModal.Body className="bg-black ">
           {children}

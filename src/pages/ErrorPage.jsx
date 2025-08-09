@@ -4,7 +4,7 @@ import logo from '../assets/1.svg';
 const ErrorPage = () => {
   return (
     <div className='flex flex-col items-center justify-center h-screen bg-black text-white'>
-      <img src={logo} alt="Klarity Restaurant Advisors logo" className='w-24 mb-8' />
+      <img src={logo} alt="Klarity Restaurant Advisors logo" className='w-24 mb-8' aria-label="Klarity Restaurant Advisors logo" />
       <h1 className='text-4xl font-bold mb-4'>404 - Page Not Found</h1>
       <p className='text-lg mb-8'>Oops! The page you are looking for does not exist.</p>
       <Link to="/" className='text-gold text-lg underline'>

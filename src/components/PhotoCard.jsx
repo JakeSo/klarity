@@ -2,7 +2,7 @@ import './PhotoCard.css';
 
 const PhotoCard = ({ id, img, title, description }) => {
   return (
-    <article key={id} className="photoCard w-full md:w-1/3 h-full" style={{ aspectRatio: "3/4" }}>
+    <article key={id} className="photoCard w-full md:w-1/3 h-full" style={{ aspectRatio: "3/4" }} role="region" aria-label={title}>
       <div className='photoCard-inner relative w-full h-full'>
         <div className='photoCard-front absolute w-full h-full bg-no-repeat bg-cover' style={{ backgroundImage: `url(${img})` }}>
           <div className='grid h-full bg-black bg-opacity-15 place-items-center'>

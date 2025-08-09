@@ -5,7 +5,13 @@ const About = () => {
     <>
       <div className="flex flex-col-reverse items-stretch md:flex-row h-full md:px-10">
         <div className="w-auto md:w-1/3 self-center pt-16 my-8 text-center">
-           <img className='w-full max-w-96 my-auto mx-auto px-8 md:px-0' src={headshot} />
+           <img 
+             className='w-full max-w-96 my-auto mx-auto px-8 md:px-0' 
+             src={headshot} 
+             alt="Brian Burchill, Founder of Klarity Restaurant Advisors" 
+             loading="lazy" 
+             aria-label="Portrait of Brian Burchill, Founder of Klarity Restaurant Advisors" 
+           />
         </div>
         <div className="w-auto pt-16 px-8 lg:p-24 text-left text-white flex-1 lg:px-16">
           <h1 className='my-8'>ABOUT</h1>
