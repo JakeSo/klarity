@@ -30,7 +30,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black fixed top-0 left-0 w-full md:py-8 z-10">
+    <nav className="bg-black fixed top-0 left-0 w-full py-4 z-10">
       <div className="flex items-center justify-between px-8">
         <div className="brand w-1/3 lg:w-1/6">
           <NavLink to="/">
@@ -74,8 +74,8 @@ const Navbar = () => {
           &times;
         </button>
         <ul className="flex flex-col items-center mt-20 ">
-        <li className="my-auto"><NavLink to="/About/" className="text-white" onClick={() => { toggleMenu(); scrollToTop(); }}>About</NavLink></li>
-          <li><Button id='contact-btn' className="p-4" size={""} onClick={() => setOpenModal(true)}>Contact Us</Button></li>
+        <li className="my-auto text-2xl"><NavLink to="/About/" className="text-white" onClick={() => { toggleMenu(); scrollToTop(); }}>About</NavLink></li>
+          <li><Button id='contact-btn' className="p-4" size={"2xl"} onClick={() => setOpenModal(true)}>Contact Us</Button></li>
             {/* <li><NavLink to="/About" className="text-white py-2">About</NavLink></li>
             <li>
               <Dropdown theme={dropDownTheme} label="Services" inline trigger="hover">
