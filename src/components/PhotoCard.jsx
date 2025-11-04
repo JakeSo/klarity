@@ -1,18 +1,33 @@
 import './PhotoCard.css';
+import { getResponsiveImageData } from '../utils/imageConfig.js';
 
 const PhotoCard = ({ id, img, title, description }) => {
+  // For background images, use the largest WebP if available for best quality/size ratio
+  const getOptimalBackground = () => {
+    const responsiveData = getResponsiveImageData(img);
+
+    if (responsiveData && responsiveData.srcset.webp) {
+      // Extract the largest WebP image from srcset
+      const webpSources = responsiveData.srcset.webp.split(',');
+      const largestWebp = webpSources[webpSources.length - 1]?.trim().split(' ')[0];
+      return largestWebp || img;
+    }
+
+    return img;
+  };
+
   return (
     <article key={id} className="photoCard w-full md:w-1/3 h-full" style={{ aspectRatio: "3/4" }} role="region" aria-label={title}>
       <div className='photoCard-inner relative w-full h-full'>
-        <div className='photoCard-front absolute w-full h-full bg-no-repeat bg-cover' style={{ backgroundImage: `url(${img})` }}>
-          <div className='grid h-full bg-black bg-opacity-15 place-items-center'>
+        <div className='photoCard-front absolute w-full h-full bg-no-repeat bg-cover' style={{ backgroundImage: `url(${getOptimalBackground()})` }}>
+          <div className='grid h-full bg-black bg-opacity-40 place-items-center'>
             <div className="stain max-w-80">
               <h2 className="px-12 text-shadow">{title}</h2>
             </div>
           </div>
         </div>
         <div className='photoCard-back absolute inset-0 grid w-full h-full place-items-center bg-gold text-center'>
-          <p className="text-4xl md:text-5xl px-8">
+          <p className="text-4xl lg:text-5xl px-8">
             {description}
           </p>
         </div>

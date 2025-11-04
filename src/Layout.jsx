@@ -8,7 +8,7 @@ const Layout = () => {
     return (
         <>
             <Navbar />
-            <main style={{maxWidth: "1920px"}} className={`mt-16 mx-auto md:mt-0`}>
+            <main className={`mt-16 mx-auto md:mt-0 max-w-7xl`}>
                 <Outlet />
             </main>
             <Footer />

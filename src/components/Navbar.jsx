@@ -30,9 +30,9 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black fixed top-0 left-0 w-full py-2 z-10">
+    <nav className="bg-black fixed top-0 left-0 w-full md:py-8 z-10">
       <div className="flex items-center justify-between px-8">
-        <div className="brand w-1/3 md:w-1/6">
+        <div className="brand w-1/3 lg:w-1/6">
           <NavLink to="/">
             <img 
               title="Klarity Restaurant Advisors logo" 

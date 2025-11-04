@@ -3,7 +3,7 @@ import Service from "../components/Service.jsx";
 import Button from "../components/Button.jsx";
 import { ContactForm } from "../components/ContactForm.jsx";
 import logo from "../assets/1.svg";
-import banner from "../assets/banner.gif";
+import bannerVideo from "../assets/banner.mp4";
 import restaurant1 from "../assets/restaurant_1.jpg";
 import restaurant3 from "../assets/restaurant_3.jpg";
 import { Modal } from "../components/Modal.jsx";
@@ -14,6 +14,7 @@ import accoladeLogos from "../assets/Accolades";
 import kitchen1 from "../assets/kitchen-1.jpg";
 import kitchen2 from "../assets/kitchen-3.jpg";
 import ParallaxSection from "../components/ParallaxSection.jsx";
+import { getResponsiveImageData } from "../utils/imageConfig.js";
 
 const Home = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -24,43 +25,51 @@ const Home = () => {
   return (
     <div>
       <div
-        className="section banner flex justify-center"
-        style={{ maxHeight: "800px" }}
+        className="max-h-[600px] relative overflow-hidden align-middle h-48 md:h-96 lg:h-[1080px] flex justify-center"
       >
-        <img
-          className="absolute w-full top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3"
-          src={banner}
-        ></img>
+        <video
+          className="absolute w-full top-1/4 -translate-y-1/4 lg:top-1/3 lg:-translate-y-1/3 object-cover"
+          src={bannerVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+        />
       </div>
       <div className="section flex flex-wrap min-h-full w-full">
-        <div className="w-full h-full px-4 pb-4 md:px-10 md:w-2/3 text-center my-auto">
-          <img
-            src={logo}
-            alt="Klarity logo"
-            className="mx-auto w-32 py-6 my-3 md:w-44 md:py-1"
-          ></img>
-          <h1 className="md:px-4 text-5xl">
-            HELPING RESTAURANTS FIND <span className="text-gold">FOCUS</span> IN AN EVER-EVOLVING INDUSTRY
-          </h1>
-        </div>
-        <div className="w-full h-full md:w-1/3">
-          <ImageUnblur src={restaurant1} alt="dining room" />
-          {/* <video className="w-full" autoPlay muted loop disablePictureInPicture>
-            <source src={onions}></source>
-          </video> */}
+        <div className="w-full max-w-7xl mx-auto flex flex-wrap">
+          <div className="w-full md:h-full px-4 pb-4 md:px-8 md:w-1/2 lg:w-2/3 text-center content-center">
+            <img
+              src={logo}
+              alt="Klarity logo"
+              className="mx-auto w-32 py-6 my-3 md:w-36 md:py-1"
+            ></img>
+            <h1 className="md:px-4 text-3xl lg:text-5xl">
+              HELPING RESTAURANTS FIND <span className="text-gold">FOCUS</span> IN AN EVER-EVOLVING INDUSTRY
+            </h1>
+          </div>
+          <div className="w-full h-full md:w-1/2 lg:w-1/3">
+            <ImageUnblur src={restaurant1} alt="dining room" />
+            {/* <video className="w-full" autoPlay muted loop disablePictureInPicture>
+              <source src={onions}></source>
+            </video> */}
+          </div>
         </div>
       </div>
       <ParallaxSection img={kitchen1}>
-        <h2 className="italic md:text-5xl">
-          Our mission is to elevate dining experiences by providing expert
-          advice, optimizing sustainable practices, fostering culinary
-          creativity, and delivering exceptional quality and hospitality to
-          fulfill your guests outstanding experience.
-        </h2>
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="italic text-3xl md:text-4xl lg:text-5xl">
+            Our mission is to elevate dining experiences by providing expert
+            advice, optimizing sustainable practices, fostering culinary
+            creativity, and delivering exceptional quality and hospitality to
+            fulfill your guests outstanding experience.
+          </h2>
+        </div>
       </ParallaxSection>
       <div id="Services" className="section flex flex-wrap scroll-pt-8">
-        <div className="w-full h-fit text-left p-8">
-          <h1 className="mt-4 text-center underline-offset-8 underline decoration-gold">OUR SERVICES</h1>
+        <div className="w-full max-w-7xl mx-auto h-fit text-left p-8">
+          <h1 className="mt-4 text-center text-4xl lg:text-5xl underline-offset-8 underline decoration-gold">OUR SERVICES</h1>
           <div className="w-full mt-10 md:mt-0 flex flex-col md:grid md:grid-cols-3 md:grid-rows-1 ">
             <Service title="CONSULTING">
               <p className="px-5 text-2xl">
@@ -71,7 +80,7 @@ const Home = () => {
                 issues.
               </p>
               <a
-                className="ms-auto py-2 text-gold "
+                className="ms-auto py-2 text-gold cursor-pointer"
                 onClick={() => setShowServiceModal1(true)}
               >
                 Learn More...
@@ -115,7 +124,7 @@ const Home = () => {
                 owners.
               </p>
               <a
-                className="ms-auto py-2 text-gold "
+                className="ms-auto py-2 text-gold cursor-pointer"
                 onClick={() => setShowServiceModal2(true)}
               >
                 Learn More...
@@ -155,7 +164,7 @@ const Home = () => {
                 visible issues and underlying complexities.
               </p>
               <a
-                className="ms-auto py-2 text-gold"
+                className="ms-auto py-2 text-gold cursor-pointer"
                 onClick={() => setShowServiceModal3(true)}
               >
                 Learn More...
@@ -201,60 +210,107 @@ const Home = () => {
           </div> */}
       </div>
       <div id="Why" className="section flex flex-wrap text-center">
-        <h1 className="mb-8 mb-10 px-4 mx-auto underline-offset-8 underline decoration-gold">WHY CHOOSE US?</h1>
-        <div className="flex justify-center flex-col flex-wrap md:flex-row w-full h-full">
-          {whyUsSections.map((section) => (
-            <PhotoCard key={section.id} {...section} />
-          ))}
+        <div className="w-full max-w-7xl mx-auto">
+          <h1 className="mb-10 px-4 mx-auto text-4xl lg:text-5xl underline-offset-8 underline decoration-gold">WHY CHOOSE US?</h1>
+          <div className="flex justify-center flex-col flex-wrap md:flex-row w-full">
+            {whyUsSections.map((section) => (
+              <PhotoCard key={section.id} {...section} />
+            ))}
+          </div>
         </div>
       </div>
       <div className="section flex flex-col lg:flex-row">
-        <div className="w-full h-full p-10  md:h-2/3 my-auto text-center">
-          {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
-          <h1 className="uppercase pb-6 text-4xl">
-            Let&apos;s take your restaurant to the{" "}
-            <span className="text-gold text-5xl">highest level</span>!
-          </h1>
-          <h2 className="text-2xl pb-2">
-            Klarity aims to offer owners a sense of assurance by ensuring that
-            their restaurant team is committed to their success. Our goal is to
-            eliminate those sleepless nights by:
-          </h2>
-          <ul id="goalsList" className="text-left text-2xl md:px-8">
-            <li>
-              Ensuring your restaurant generates profits and fills you with
-              pride.
-            </li>
-            <li>
-              Recapturing the contagious passion that initially led you to open
-              a restaurant.
-            </li>
-            <li>
-              Alleviating daily stressors and unnecessary burdens that dampen
-              your spirits.
-            </li>
-            <li>
-              Providing a sense of confidence by understanding the complete
-              picture, beyond just the visible issues keeping you awake at
-              night.
-            </li>
-          </ul>
-        </div>
-        <div className="w-full h-full ">
-          <ImageUnblur src={restaurant3} alt="dining room" />
+        <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row">
+          <div className="w-full h-full p-10 my-auto text-center">
+            {/* <img src={logo} alt="Klarity logo" className='mx-auto w-24 py-10'></img> */}
+            <h1 className="uppercase pb-6 text-4xl">
+              Let&apos;s take your restaurant to the{" "}
+              <span className="text-gold text-4xl">highest level</span>!
+            </h1>
+            <h2 className="text-xl md:text-2xl pb-2">
+              Klarity aims to offer owners a sense of assurance by ensuring that
+              their restaurant team is committed to their success. Our goal is to
+              eliminate those sleepless nights by:
+            </h2>
+            <ul id="goalsList" className="text-left text-lg md:text-3xl lg:text-2xl md:px-8">
+              <li>
+                Ensuring your restaurant generates profits and fills you with
+                pride.
+              </li>
+              <li>
+                Recapturing the contagious passion that initially led you to open
+                a restaurant.
+              </li>
+              <li>
+                Alleviating daily stressors and unnecessary burdens that dampen
+                your spirits.
+              </li>
+              <li>
+                Providing a sense of confidence by understanding the complete
+                picture, beyond just the visible issues keeping you awake at
+                night.
+              </li>
+            </ul>
+          </div>
+          <div className="w-full h-full">
+            <ImageUnblur src={restaurant3} alt="dining room" />
+          </div>
         </div>
       </div>
       <div id="Accolades" className="section text-center">
-        <h1 className="mb-3 underline-offset-8 underline decoration-gold">FEATURED</h1>
-        <ul className="flex flex-row flex-wrap gap-3 px-16 my-8 justify-center items-center">
-          {accoladeLogos.map((accolade, index) => (
-            <li key={index}>
-              <a href={accolade.url}>
-                <img className="w-[200px]" src={accolade.logo}></img>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="w-full mx-auto my-8">
+          <h1 className="mb-3 text-4xl lg:text-5xl underline-offset-8 underline decoration-gold">FEATURED</h1>
+          <ul className="flex flex-row flex-wrap gap-3 px-16 my-8 justify-center items-center">
+            {accoladeLogos.map((accolade, index) => {
+              const responsiveData = getResponsiveImageData(accolade.logo);
+
+              return (
+                <li key={index}>
+                  <a href={accolade.url}>
+                    {responsiveData && (responsiveData.srcset.webp || responsiveData.srcset.jpg || responsiveData.srcset.png) ? (
+                      <picture>
+                        {responsiveData.srcset.webp && (
+                          <source
+                            type="image/webp"
+                            srcSet={responsiveData.srcset.webp}
+                            sizes={responsiveData.sizes}
+                          />
+                        )}
+                        {responsiveData.srcset.png && (
+                          <source
+                            type="image/png"
+                            srcSet={responsiveData.srcset.png}
+                            sizes={responsiveData.sizes}
+                          />
+                        )}
+                        {responsiveData.srcset.jpg && (
+                          <source
+                            type="image/jpeg"
+                            srcSet={responsiveData.srcset.jpg}
+                            sizes={responsiveData.sizes}
+                          />
+                        )}
+                        <img
+                          className="w-[150px] lg:w-[180px]"
+                          src={responsiveData.fallback || accolade.logo}
+                          alt="Accolade logo"
+                          loading="lazy"
+                        />
+                      </picture>
+                    ) : (
+                      <img
+                        className="w-[150px] lg:w-[180px]"
+                        src={accolade.logo}
+                        alt="Accolade logo"
+                        loading="lazy"
+                      />
+                    )}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
       <ParallaxSection img={kitchen2}>
         <h2 className="my-auto mb-4 md:text-5xl">
