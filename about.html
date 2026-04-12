@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Klarity Restaurant Advisors</title>
+  <link rel="icon" type="image/svg+xml" href="assets/1.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="description" content="Meet Brian Burchill, Founder of Klarity Restaurant Advisors — over 37 years of restaurant industry expertise." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="About | Klarity Restaurant Advisors" />
+  <meta property="og:description" content="Meet Brian Burchill, Founder of Klarity Restaurant Advisors." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://klarityrestaurantadvisors.com/about.html" />
+  <meta name="author" content="Jake Sorrentino" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Forum&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="brand">
+      <a href="index.html" aria-label="Klarity Restaurant Advisors home">
+        <img src="assets/4.svg" alt="Klarity Restaurant Advisors logo" title="Klarity Restaurant Advisors" />
+      </a>
+    </div>
+    <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    <div class="nav-links" role="list">
+      <a href="about.html" role="listitem">About</a>
+      <button class="btn" id="nav-contact-btn" aria-haspopup="dialog">Contact Us</button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <button id="mobile-close" aria-label="Close menu">&times;</button>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
+    <button class="btn" onclick="closeMobileMenu(); openModal('contact-modal')">Contact Us</button>
+  </div>
+
+  <div class="navbar-spacer"></div>
+
+  <!-- About Content -->
+  <main>
+    <div id="about-page">
+      <div class="about-card">
+        <div class="about-card-inner">
+          <img
+            src="assets/headshot.jpg"
+            alt="Brian Burchill, Founder of Klarity Restaurant Advisors"
+            loading="lazy"
+          />
+          <span class="name">Brian Burchill</span>
+          <span class="role">Founder, Klarity Restaurant Advisors</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <h1>ABOUT</h1>
+        <p>
+          Brian Burchill, Founder of Klarity is a native of New York. He
+          embarked on his restaurant career more than 37 years ago in various
+          restaurants and roles throughout NYC, starting from dishwasher to
+          managing/overseeing Nightclubs. His true passion for the restaurant
+          industry was unveiled during his time studying theatre at the
+          American Academy of Dramatic Arts in Manhattan. Over the course of
+          eight years, he gained valuable experience working under Eli Zabar,
+          a prominent figure in New York&#39;s restaurant scene. Brian started
+          as a server and quickly ascended to the role of General Manager,
+          overseeing operations at two of Zabar&#39;s establishments
+          simultaneously. This exposure sparked his enthusiasm for the
+          restaurant field, and he played a pivotal role in launching and
+          managing several of Zabar&#39;s ventures, shaping his approach to
+          running successful restaurants through what he terms &ldquo;The
+          Performance,&rdquo; drawing on his theatrical background. This
+          concept has been fundamental to his achievements.
+        </p>
+        <p>
+          Transitioning into entrepreneurship, Brian created &amp; co-founded
+          Famous Toastery a breakfast and lunch restaurant outside Charlotte,
+          NC. His entrepreneurial acumen led to the establishment of a
+          franchise system that expanded to encompass 40 Famous Toastery
+          restaurants. In each establishment, Brian served as Chief Operating
+          Officer, Chief Culture Officer, consultant, director, and mentor,
+          guiding them towards excellence. Renowned for his goal-oriented
+          strategic leadership and innovative vision, Brian boasts a proven
+          track record in managing diverse products from conception to market
+          launch and profitable commercialization.
+        </p>
+        <p>
+          Brian&#39;s entrepreneurial spirit is characterized by an
+          open-minded approach and readiness to tackle challenges with
+          patience and perseverance. Noteworthy is his keen ability to discern
+          and rectify seemingly minor day-to-day practices that significantly
+          impact operational success.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h5>Klarity Restaurant Advisors</h5>
+        <p>&copy; <span id="footer-year"></span> Klarity Restaurant Advisors. All rights reserved.</p>
+      </div>
+      <div class="footer-social" aria-label="Social media links">
+        <a href="https://www.linkedin.com/in/brian-burchill-5643324a/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/klarity_restaurant_advisors_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="modal-overlay contact-form-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="contact-form-wrap">
+          <h2 id="contact-modal-title">Contact Us!</h2>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="cf-name">Your name</label>
+              <input type="text" id="cf-name" name="name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="cf-company">Your company</label>
+              <input type="text" id="cf-company" name="company" required autocomplete="organization" />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Your email</label>
+              <input type="email" id="cf-email" name="email" required placeholder="name@company.com" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="cf-phone">Your phone</label>
+              <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn" style="width:100%; padding: 0.75rem 1rem;">Send</button>
+            </div>
+          </form>
+        </div>
+        <div id="contact-success" class="contact-success" style="display:none;">
+          <h2>ORDER'S IN, CHEF!</h2>
+          <h3>We will reach out to you pronto!</h3>
+          <img src="assets/1.svg" alt="Klarity logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init({ publicKey: 'r_muFh9yesSMaZE0X', blockHeadless: true, limitRate: { id: 'app', throttle: 10000 } });
+
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    function openModal(id) {
+      const el = document.getElementById(id);
+      el.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function resetContactForm() {
+      document.getElementById('contact-form-wrap').style.display = '';
+      document.getElementById('contact-success').style.display = 'none';
+      document.getElementById('contact-form').reset();
+      const btn = document.querySelector('#contact-form [type=submit]');
+      btn.disabled = false;
+      btn.textContent = 'Send';
+    }
+
+    // Contact modal close + reset
+    document.getElementById('contact-modal').addEventListener('click', function(e) {
+      if (e.target === this) { closeModal('contact-modal'); resetContactForm(); }
+    });
+    document.querySelector('#contact-modal .modal-close').addEventListener('click', () => {
+      closeModal('contact-modal'); resetContactForm();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        const wasContactOpen = document.getElementById('contact-modal').classList.contains('open');
+        document.querySelectorAll('.modal-overlay.open').forEach(el => closeModal(el.id));
+        if (wasContactOpen) resetContactForm();
+        closeMobileMenu();
+      }
+    });
+
+    document.getElementById('nav-contact-btn').addEventListener('click', () => openModal('contact-modal'));
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+    });
+
+    document.getElementById('mobile-close').addEventListener('click', closeMobileMenu);
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    // Contact form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('[type=submit]');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      emailjs.sendForm('service-3636', 'template_ozcpc2h', this)
+        .then(() => {
+          document.getElementById('contact-form-wrap').style.display = 'none';
+          document.getElementById('contact-success').style.display = 'flex';
+        })
+        .catch(err => { console.error(err); btn.disabled = false; btn.textContent = 'Send'; });
+    });
+  </script>
+</body>
+</html>

@@ -1,48 +1,455 @@
 <!doctype html>
-<html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/1.svg" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="description" content="Klarity Restaurant Advisors: Restaurant consulting, operational improvement, and industry expertise for your business." />
-    <meta name="keywords" content="restaurant consulting, restaurant advisors, operational improvement, menu development, talent acquisition, Charlotte, Klarity" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Klarity Restaurant Advisors" />
-    <meta property="og:description" content="Restaurant consulting, operational improvement, and industry expertise for your business." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://klarityrestaurantadvisors.com/" />
-    <meta property="og:image" content="/src/assets/banner.gif" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Klarity Restaurant Advisors" />
-    <meta name="twitter:description" content="Restaurant consulting, operational improvement, and industry expertise for your business." />
-    <meta name="twitter:image" content="/src/assets/banner.gif" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Klarity Restaurant Advisors",
-        "url": "https://klarityrestaurantadvisors.com/",
-        "logo": "/src/assets/1.svg",
-        "sameAs": [
-          "https://www.linkedin.com/in/brian-burchill-5643324a/",
-          "https://www.instagram.com/klarity_restaurant_advisors_"
-        ],
-        "description": "Restaurant consulting, operational improvement, and industry expertise for your business."
-      }
-    </script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Forum&display=swap');
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Jake Sorrentino" />
-    <!-- GitHub https://github.com/JakeSo -->
-    <!-- LinkedIn https://linkedin.com/in/jake-sorrentino -->
-    <!-- <script src="https://kit.fontawesome.com/00c1a8f662.js" crossorigin="anonymous"></script> -->
-    <title>Klarity Restaurant Advisors</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klarity Restaurant Advisors</title>
+  <link rel="icon" type="image/svg+xml" href="assets/1.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="description" content="Klarity Restaurant Advisors: Restaurant consulting, operational improvement, and industry expertise for your business." />
+  <meta name="keywords" content="restaurant consulting, restaurant advisors, operational improvement, menu development, talent acquisition, Charlotte, Klarity" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Klarity Restaurant Advisors" />
+  <meta property="og:description" content="Restaurant consulting, operational improvement, and industry expertise for your business." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://klarityrestaurantadvisors.com/" />
+  <meta property="og:image" content="assets/banner.gif" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Klarity Restaurant Advisors" />
+  <meta name="twitter:description" content="Restaurant consulting, operational improvement, and industry expertise for your business." />
+  <meta name="twitter:image" content="assets/banner.gif" />
+  <meta name="author" content="Jake Sorrentino" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Klarity Restaurant Advisors",
+    "url": "https://klarityrestaurantadvisors.com/",
+    "logo": "assets/1.svg",
+    "sameAs": [
+      "https://www.linkedin.com/in/brian-burchill-5643324a/",
+      "https://www.instagram.com/klarity_restaurant_advisors_"
+    ],
+    "description": "Restaurant consulting, operational improvement, and industry expertise for your business."
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Forum&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- Navbar -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="brand">
+      <a href="index.html" aria-label="Klarity Restaurant Advisors home">
+        <img src="assets/4.svg" alt="Klarity Restaurant Advisors logo" title="Klarity Restaurant Advisors" />
+      </a>
+    </div>
+    <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    <div class="nav-links" role="list">
+      <a href="about.html" role="listitem">About</a>
+      <button class="btn" id="nav-contact-btn" aria-haspopup="dialog">Contact Us</button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <button id="mobile-close" aria-label="Close menu">&times;</button>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
+    <button class="btn" onclick="closeMobileMenu(); openModal('contact-modal')">Contact Us</button>
+  </div>
+
+  <div class="navbar-spacer"></div>
+
+  <!-- Banner -->
+  <div id="banner" class="section" role="img" aria-label="Klarity Restaurant Advisors banner">
+    <img src="assets/banner.gif" alt="" aria-hidden="true" />
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" class="section">
+    <div class="hero-text">
+      <img src="assets/1.svg" alt="Klarity logo" />
+      <h1>HELPING RESTAURANTS FIND <span class="text-gold">FOCUS</span> IN AN EVER-EVOLVING INDUSTRY</h1>
+    </div>
+    <div class="hero-img">
+      <div class="image-container">
+        <img class="blur-image" src="assets/restaurant_1.jpg" alt="Dining room" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax 1 -->
+  <section class="parallax-section section" style="background-image: url('assets/kitchen-1.jpg');" aria-label="Mission statement">
+    <div class="parallax-inner text-shadow">
+      <h2 class="italic">
+        Our mission is to elevate dining experiences by providing expert
+        advice, optimizing sustainable practices, fostering culinary
+        creativity, and delivering exceptional quality and hospitality to
+        fulfill your guests outstanding experience.
+      </h2>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="Services" class="section" aria-labelledby="services-heading">
+    <div id="services-section">
+      <h1 id="services-heading" class="underline-gold">OUR SERVICES</h1>
+      <div class="services-grid">
+
+        <div class="service">
+          <div class="stain mx-auto">
+            <h2>CONSULTING</h2>
+          </div>
+          <div class="service-body">
+            <p>We understand your passion for opening a restaurant and want to reduce daily pressures and worries. Klarity offers a thorough analysis of your business to address all concerns and underlying issues.</p>
+            <button class="learn-more" onclick="openModal('modal-consulting')" aria-haspopup="dialog">Learn More...</button>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="stain mx-auto">
+            <h2>TRAINING &amp; DEVELOPMENT</h2>
+          </div>
+          <div class="service-body">
+            <p>Klarity seeks to provide restaurant owners with a sense of assurance and peace of mind by helping their team commit to success. The goal is to eliminate stress and ensure profitability, pride, passion, and confidence for restaurant owners.</p>
+            <button class="learn-more" onclick="openModal('modal-training')" aria-haspopup="dialog">Learn More...</button>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="stain mx-auto">
+            <h2>QUALITY ASSURANCE</h2>
+          </div>
+          <div class="service-body">
+            <p>With our comprehensive approach, we address all aspects of your business, providing confidence and security by addressing both visible issues and underlying complexities.</p>
+            <button class="learn-more" onclick="openModal('modal-qa')" aria-haspopup="dialog">Learn More...</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="Why" class="section" aria-labelledby="why-heading">
+    <div id="why-section">
+      <h1 id="why-heading" class="underline-gold">WHY CHOOSE US?</h1>
+      <div class="photo-cards">
+        <article class="photoCard" tabindex="0" aria-label="Industry Expertise">
+          <div class="photoCard-inner">
+            <div class="photoCard-front" style="background-image: url('assets/photoCard1.jpg');">
+              <div class="photoCard-front-overlay">
+                <div class="stain">
+                  <h2 class="text-shadow">Industry Expertise</h2>
+                </div>
+              </div>
+            </div>
+            <div class="photoCard-back">
+              <p>Over 35 years of extensive knowledge and experience in the industry.</p>
+            </div>
+          </div>
+        </article>
+        <article class="photoCard" tabindex="0" aria-label="Customized Approach">
+          <div class="photoCard-inner">
+            <div class="photoCard-front" style="background-image: url('assets/photoCard2.jpg');">
+              <div class="photoCard-front-overlay">
+                <div class="stain">
+                  <h2 class="text-shadow">Customized Approach</h2>
+                </div>
+              </div>
+            </div>
+            <div class="photoCard-back">
+              <p>We tailor our services to meet your specific needs.</p>
+            </div>
+          </div>
+        </article>
+        <article class="photoCard" tabindex="0" aria-label="Commitment to Excellence">
+          <div class="photoCard-inner">
+            <div class="photoCard-front" style="background-image: url('assets/photoCard3.jpg');">
+              <div class="photoCard-front-overlay">
+                <div class="stain">
+                  <h2 class="text-shadow">Commitment to Excellence</h2>
+                </div>
+              </div>
+            </div>
+            <div class="photoCard-back">
+              <p>Committed to achieving the highest standards in all aspects of your restaurant.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Goals -->
+  <section id="goals-section" class="section">
+    <div class="goals-text">
+      <h1>Let&#8217;s take your restaurant to the <span class="text-gold" style="font-size: 1.2em;">highest level</span>!</h1>
+      <h2>Klarity aims to offer owners a sense of assurance by ensuring that their restaurant team is committed to their success. Our goal is to eliminate those sleepless nights by:</h2>
+      <ul>
+        <li>Ensuring your restaurant generates profits and fills you with pride.</li>
+        <li>Recapturing the contagious passion that initially led you to open a restaurant.</li>
+        <li>Alleviating daily stressors and unnecessary burdens that dampen your spirits.</li>
+        <li>Providing a sense of confidence by understanding the complete picture, beyond just the visible issues keeping you awake at night.</li>
+      </ul>
+    </div>
+    <div class="goals-img">
+      <div class="image-container">
+        <img class="blur-image" src="assets/restaurant_3.jpg" alt="Dining room" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Accolades -->
+  <section id="Accolades" class="section" aria-labelledby="accolades-heading">
+    <div id="accolades-section">
+      <h1 id="accolades-heading" class="underline-gold">FEATURED</h1>
+      <ul class="accolades-list">
+        <li><a href="https://www.bizjournals.com/charlotte" target="_blank" rel="noopener"><img src="assets/Accolades/Charlotte-Business-Journal.jpg" alt="Charlotte Business Journal" loading="lazy" /></a></li>
+        <li><a href="https://www.entrepreneur.com/" target="_blank" rel="noopener"><img src="assets/Accolades/entrepreneur-magazine.jpg" alt="Entrepreneur Magazine" loading="lazy" /></a></li>
+        <li><a href="https://www.forbes.com/" target="_blank" rel="noopener"><img src="assets/Accolades/Forbes_logo.png" alt="Forbes" loading="lazy" /></a></li>
+        <li><a href="https://www.nrn.com" target="_blank" rel="noopener"><img src="assets/Accolades/Nations-rest-news.jpg" alt="Nation's Restaurant News" loading="lazy" /></a></li>
+        <li><a href="https://www.charlotteobserver.com/" target="_blank" rel="noopener"><img src="assets/Accolades/the-charlotte-observer.png" alt="The Charlotte Observer" loading="lazy" /></a></li>
+        <li><a href="https://www.wsj.com/" target="_blank" rel="noopener"><img src="assets/Accolades/wall-street-journal.png" alt="Wall Street Journal" loading="lazy" /></a></li>
+        <li><img src="assets/Accolades/top-food-franchise.png" alt="Top Food Franchise" loading="lazy" /></li>
+        <li><a href="https://www.inc.com/inc5000" target="_blank" rel="noopener"><img src="assets/Accolades/inc-5000.png" alt="Inc 5000" loading="lazy" /></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Parallax 2 + CTA -->
+  <section class="parallax-section section" style="background-image: url('assets/kitchen-3.jpg');" aria-label="Call to action">
+    <div class="parallax-inner text-shadow">
+      <h2>Let&#8217;s work together to unlock the full potential of your business and create unforgettable experiences for your guests:</h2>
+      <div style="text-align: center; padding-top: 1.5rem;">
+        <button class="btn btn-cta" onclick="openModal('contact-modal')" aria-haspopup="dialog">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h5>Klarity Restaurant Advisors</h5>
+        <p>&copy; <span id="footer-year"></span> Klarity Restaurant Advisors. All rights reserved.</p>
+      </div>
+      <div class="footer-social" aria-label="Social media links">
+        <a href="https://www.linkedin.com/in/brian-burchill-5643324a/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/klarity_restaurant_advisors_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- === Modals === -->
+
+  <!-- Consulting Modal -->
+  <div id="modal-consulting" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-consulting-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <button class="modal-close" onclick="closeModal('modal-consulting')" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4 id="modal-consulting-title">CONSULTING</h4>
+        <p>Our services encompass a thorough evaluation and improvement of operational functions at all levels. Klarity will play a crucial role in transforming organizational culture and talent to enhance both efficiency and effectiveness. Our Advisors focus includes strategic menu development, in-depth analysis, and innovative design enhancements to strengthen brand positioning as well as boosting financial performance by optimizing operational processes. We are committed to increasing profitability through enhanced operating systems.</p>
+        <p>Our advisors focus on end-to-end conceptualization and precise execution of innovative ideas, providing continuous guidance during pre-opening, post-opening, and turnaround phases. With meticulous project oversight, we ensure the timely and successful completion of projects.</p>
+        <p>Additionally, Klarity offers support in recruiting, talent acquisition, and filling managerial and senior-level positions within your restaurant.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Training Modal -->
+  <div id="modal-training" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-training-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <button class="modal-close" onclick="closeModal('modal-training')" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4 id="modal-training-title">TRAINING &amp; DEVELOPMENT</h4>
+        <p>Training in the restaurant industry is crucial for your staff to perform effectively, beyond just dedication. Exceptional service requires a blend of knowledge and expertise, achievable through comprehensive training and ongoing education. For example, when aiming to improve serving efficiency, training with practical tips is always more effective than reprimands.</p>
+        <p>Quality training is essential for consistently delivering outstanding customer experiences and ensuring staff understand safety protocols. Training also prepares staff to handle emergencies like choking or slipping incidents, crucial for maintaining a safe environment. Effective training helps employees remain composed and take necessary actions during unforeseen situations. Investing in training can reduce high turnover rates by fostering loyalty and commitment among staff, creating skilled and reliable staff.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QA Modal -->
+  <div id="modal-qa" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-qa-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <button class="modal-close" onclick="closeModal('modal-qa')" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4 id="modal-qa-title">QUALITY ASSURANCE</h4>
+        <p>Your restaurant carries a significant responsibility to maintain strict safety protocols to minimize health risks for both customers and employees. Quality assurance plays a crucial role in establishing and enforcing measures that promote consistent hygiene standards, product quality, and compliance with regulations.</p>
+        <p>Quality assurance practices within food production encompass a range of stages, including sourcing raw materials, refining processes, packaging, ensuring accurate labeling, monitoring storage conditions, controlling distribution, and assessing shelf life. Establishing clear guidelines for each stage of the supply chain and conducting regular audits are crucial components.</p>
+        <p>Klarity can assist in establishing protocols such as Good Manufacturing Practices (GMP) or Hazard Analysis Critical Control Points (HACCP). These quality assurance efforts are aimed at preventing contamination and mislabeling issues that could pose risks to food safety. Ultimately, robust quality assurance systems help protect the health of your guests and staff, while also maintaining the reputation of the brand at every key stage of the food development process.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="modal-overlay contact-form-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="contact-form-wrap">
+          <h2 id="contact-modal-title">Contact Us!</h2>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="cf-name">Your name</label>
+              <input type="text" id="cf-name" name="name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="cf-company">Your company</label>
+              <input type="text" id="cf-company" name="company" required autocomplete="organization" />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Your email</label>
+              <input type="email" id="cf-email" name="email" required placeholder="name@company.com" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="cf-phone">Your phone</label>
+              <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn" style="width:100%; padding: 0.75rem 1rem;">Send</button>
+            </div>
+          </form>
+        </div>
+        <div id="contact-success" class="contact-success" style="display:none;">
+          <h2>ORDER'S IN, CHEF!</h2>
+          <h3>We will reach out to you pronto!</h3>
+          <img src="assets/1.svg" alt="Klarity logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // EmailJS
+    emailjs.init({ publicKey: 'r_muFh9yesSMaZE0X', blockHeadless: true, limitRate: { id: 'app', throttle: 10000 } });
+
+    // Footer year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Modal helpers
+    function openModal(id) {
+      const el = document.getElementById(id);
+      el.classList.add('open');
+      el.querySelector('.modal-box').focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on overlay click (non-contact modals)
+    document.querySelectorAll('.modal-overlay:not(#contact-modal)').forEach(overlay => {
+      overlay.addEventListener('click', e => {
+        if (e.target === overlay) closeModal(overlay.id);
+      });
+    });
+
+    // Close modal on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        const wasContactOpen = document.getElementById('contact-modal').classList.contains('open');
+        document.querySelectorAll('.modal-overlay.open').forEach(el => closeModal(el.id));
+        if (wasContactOpen) resetContactForm();
+        closeMobileMenu();
+      }
+    });
+
+    // Nav contact button
+    document.getElementById('nav-contact-btn').addEventListener('click', () => openModal('contact-modal'));
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+    });
+
+    document.getElementById('mobile-close').addEventListener('click', closeMobileMenu);
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    // Photo card flip on touch/click (mobile)
+    document.querySelectorAll('.photoCard').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('flipped');
+        }
+      });
+    });
+
+    // Image blur-in on scroll
+    const blurObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('in-view', entry.intersectionRatio >= 0.8);
+      });
+    }, { threshold: 0.8 });
+
+    document.querySelectorAll('.blur-image').forEach(img => blurObserver.observe(img));
+
+    // Contact form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('[type=submit]');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      emailjs.sendForm('service-3636', 'template_ozcpc2h', this)
+        .then(() => {
+          document.getElementById('contact-form-wrap').style.display = 'none';
+          document.getElementById('contact-success').style.display = 'flex';
+        })
+        .catch(err => {
+          console.error(err);
+          btn.disabled = false;
+          btn.textContent = 'Send';
+        });
+    });
+
+    // Contact modal close + reset
+    document.getElementById('contact-modal').addEventListener('click', function(e) {
+      if (e.target === this) { closeModal('contact-modal'); resetContactForm(); }
+    });
+    document.querySelector('#contact-modal .modal-close').addEventListener('click', () => {
+      closeModal('contact-modal'); resetContactForm();
+    });
+
+    function resetContactForm() {
+      document.getElementById('contact-form-wrap').style.display = '';
+      document.getElementById('contact-success').style.display = 'none';
+      document.getElementById('contact-form').reset();
+      const btn = document.querySelector('#contact-form [type=submit]');
+      btn.disabled = false;
+      btn.textContent = 'Send';
+    }
+  </script>
+</body>
 </html>
