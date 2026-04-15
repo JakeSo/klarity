@@ -1,8 +1,27 @@
-# React + Vite
+# Klarity Restaurant Advisors
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website for [Klarity Restaurant Advisors](https://klarityrestaurantadvisors.com/) — a restaurant consulting firm founded by Brian Burchill, offering consulting, training & development, and quality assurance services.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Static HTML/CSS/JS — no build step required.
+
+- **Fonts:** EB Garamond & Forum via Google Fonts
+- **Icons:** Font Awesome 6
+- **Email:** EmailJS (`@emailjs/browser`)
+
+## Structure
+
+```
+/
+├── index.html                        # Home
+├── about/index.html                  # About Brian Burchill
+├── services/
+│   ├── consulting/index.html
+│   ├── training/index.html
+│   └── quality-assurance/index.html
+├── assets/                           # Images, SVGs, logos
+├── styles.css
+├── manifest.json
+└── sitemap.xml
+```
