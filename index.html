@@ -50,6 +50,14 @@
     </div>
     <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
     <div class="nav-links" role="list">
+      <div class="nav-dropdown" role="listitem">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Services <span class="dropdown-arrow">&#9662;</span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="services/consulting/" role="menuitem">Consulting</a></li>
+          <li><a href="services/training/" role="menuitem">Training &amp; Development</a></li>
+          <li><a href="services/quality-assurance/" role="menuitem">Quality Assurance</a></li>
+        </ul>
+      </div>
       <a href="about/" role="listitem">About</a>
       <button class="btn" id="nav-contact-btn" aria-haspopup="dialog">Contact Us</button>
     </div>
@@ -58,6 +66,14 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
     <button id="mobile-close" aria-label="Close menu">&times;</button>
+    <div class="mobile-services">
+      <button class="mobile-services-toggle" aria-expanded="false">Services &#9662;</button>
+      <ul class="mobile-services-menu" hidden>
+        <li><a href="services/consulting/" onclick="closeMobileMenu()">Consulting</a></li>
+        <li><a href="services/training/" onclick="closeMobileMenu()">Training &amp; Development</a></li>
+        <li><a href="services/quality-assurance/" onclick="closeMobileMenu()">Quality Assurance</a></li>
+      </ul>
+    </div>
     <a href="about/" onclick="closeMobileMenu()">About</a>
     <button class="btn" onclick="closeMobileMenu(); openModal('contact-modal')">Contact Us</button>
   </div>
@@ -106,7 +122,7 @@
           </div>
           <div class="service-body">
             <p>We understand your passion for opening a restaurant and want to reduce daily pressures and worries. Klarity offers a thorough analysis of your business to address all concerns and underlying issues.</p>
-            <button class="learn-more" onclick="openModal('modal-consulting')" aria-haspopup="dialog">Learn More...</button>
+            <a class="learn-more" href="services/consulting/">Learn More...</a>
           </div>
         </div>
 
@@ -116,7 +132,7 @@
           </div>
           <div class="service-body">
             <p>Klarity seeks to provide restaurant owners with a sense of assurance and peace of mind by helping their team commit to success. The goal is to eliminate stress and ensure profitability, pride, passion, and confidence for restaurant owners.</p>
-            <button class="learn-more" onclick="openModal('modal-training')" aria-haspopup="dialog">Learn More...</button>
+            <a class="learn-more" href="services/training/">Learn More...</a>
           </div>
         </div>
 
@@ -126,7 +142,7 @@
           </div>
           <div class="service-body">
             <p>With our comprehensive approach, we address all aspects of your business, providing confidence and security by addressing both visible issues and underlying complexities.</p>
-            <button class="learn-more" onclick="openModal('modal-qa')" aria-haspopup="dialog">Learn More...</button>
+            <a class="learn-more" href="services/quality-assurance/">Learn More...</a>
           </div>
         </div>
 
@@ -249,52 +265,6 @@
     </div>
   </footer>
 
-  <!-- === Modals === -->
-
-  <!-- Consulting Modal -->
-  <div id="modal-consulting" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-consulting-title">
-    <div class="modal-box">
-      <div class="modal-header">
-        <button class="modal-close" onclick="closeModal('modal-consulting')" aria-label="Close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <h4 id="modal-consulting-title">CONSULTING</h4>
-        <p>Our services encompass a thorough evaluation and improvement of operational functions at all levels. Klarity will play a crucial role in transforming organizational culture and talent to enhance both efficiency and effectiveness. Our Advisors focus includes strategic menu development, in-depth analysis, and innovative design enhancements to strengthen brand positioning as well as boosting financial performance by optimizing operational processes. We are committed to increasing profitability through enhanced operating systems.</p>
-        <p>Our advisors focus on end-to-end conceptualization and precise execution of innovative ideas, providing continuous guidance during pre-opening, post-opening, and turnaround phases. With meticulous project oversight, we ensure the timely and successful completion of projects.</p>
-        <p>Additionally, Klarity offers support in recruiting, talent acquisition, and filling managerial and senior-level positions within your restaurant.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Training Modal -->
-  <div id="modal-training" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-training-title">
-    <div class="modal-box">
-      <div class="modal-header">
-        <button class="modal-close" onclick="closeModal('modal-training')" aria-label="Close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <h4 id="modal-training-title">TRAINING &amp; DEVELOPMENT</h4>
-        <p>Training in the restaurant industry is crucial for your staff to perform effectively, beyond just dedication. Exceptional service requires a blend of knowledge and expertise, achievable through comprehensive training and ongoing education. For example, when aiming to improve serving efficiency, training with practical tips is always more effective than reprimands.</p>
-        <p>Quality training is essential for consistently delivering outstanding customer experiences and ensuring staff understand safety protocols. Training also prepares staff to handle emergencies like choking or slipping incidents, crucial for maintaining a safe environment. Effective training helps employees remain composed and take necessary actions during unforeseen situations. Investing in training can reduce high turnover rates by fostering loyalty and commitment among staff, creating skilled and reliable staff.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- QA Modal -->
-  <div id="modal-qa" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-qa-title">
-    <div class="modal-box">
-      <div class="modal-header">
-        <button class="modal-close" onclick="closeModal('modal-qa')" aria-label="Close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <h4 id="modal-qa-title">QUALITY ASSURANCE</h4>
-        <p>Your restaurant carries a significant responsibility to maintain strict safety protocols to minimize health risks for both customers and employees. Quality assurance plays a crucial role in establishing and enforcing measures that promote consistent hygiene standards, product quality, and compliance with regulations.</p>
-        <p>Quality assurance practices within food production encompass a range of stages, including sourcing raw materials, refining processes, packaging, ensuring accurate labeling, monitoring storage conditions, controlling distribution, and assessing shelf life. Establishing clear guidelines for each stage of the supply chain and conducting regular audits are crucial components.</p>
-        <p>Klarity can assist in establishing protocols such as Good Manufacturing Practices (GMP) or Hazard Analysis Critical Control Points (HACCP). These quality assurance efforts are aimed at preventing contamination and mislabeling issues that could pose risks to food safety. Ultimately, robust quality assurance systems help protect the health of your guests and staff, while also maintaining the reputation of the brand at every key stage of the food development process.</p>
-      </div>
-    </div>
-  </div>
-
   <!-- Contact Modal -->
   <div id="contact-modal" class="modal-overlay contact-form-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
     <div class="modal-box">
@@ -394,6 +364,33 @@
     function closeMobileMenu() {
       mobileMenu.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    // Services dropdown
+    document.querySelectorAll('.nav-dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', e => {
+        e.stopPropagation();
+        const parent = trigger.closest('.nav-dropdown');
+        const isOpen = parent.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Mobile services submenu
+    const mobileServicesToggle = document.querySelector('.mobile-services-toggle');
+    if (mobileServicesToggle) {
+      mobileServicesToggle.addEventListener('click', () => {
+        const menu = document.querySelector('.mobile-services-menu');
+        const willShow = menu.hidden;
+        menu.hidden = !willShow;
+        mobileServicesToggle.setAttribute('aria-expanded', String(willShow));
+      });
     }
 
     // Photo card flip on touch/click (mobile)

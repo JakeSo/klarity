@@ -8,4 +8,16 @@
     <loc>https://klarityrestaurantadvisors.com/about</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://klarityrestaurantadvisors.com/services/consulting</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klarityrestaurantadvisors.com/services/training</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://klarityrestaurantadvisors.com/services/quality-assurance</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

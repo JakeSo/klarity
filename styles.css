@@ -739,3 +739,144 @@ footer {
 .italic {
   font-style: italic;
 }
+
+/* === Services Dropdown === */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger:focus {
+  color: var(--gold);
+  outline: none;
+}
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.nav-dropdown.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  min-width: 220px;
+  z-index: 50;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  color: var(--black);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+  background: var(--black);
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* Mobile services submenu */
+.mobile-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobile-services-toggle {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-services-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.mobile-services-menu[hidden] { display: none; }
+
+.mobile-services-menu li a {
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+/* === Service Detail Pages === */
+.service-page-hero {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  min-height: 40vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+@media (min-width: 768px) {
+  .service-page-hero {
+    min-height: 50vh;
+    background-attachment: fixed;
+  }
+}
+
+.service-page-hero-inner {
+  width: 100%;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  padding: 3rem 2.5rem 2rem;
+}
+
+.service-page-hero-inner h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.service-page-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.service-page-content p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}

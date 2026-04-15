@@ -30,6 +30,14 @@
     </div>
     <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
     <div class="nav-links" role="list">
+      <div class="nav-dropdown" role="listitem">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Services <span class="dropdown-arrow">&#9662;</span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="../services/consulting/" role="menuitem">Consulting</a></li>
+          <li><a href="../services/training/" role="menuitem">Training &amp; Development</a></li>
+          <li><a href="../services/quality-assurance/" role="menuitem">Quality Assurance</a></li>
+        </ul>
+      </div>
       <a href="../about/" role="listitem">About</a>
       <button class="btn" id="nav-contact-btn" aria-haspopup="dialog">Contact Us</button>
     </div>
@@ -38,6 +46,14 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
     <button id="mobile-close" aria-label="Close menu">&times;</button>
+    <div class="mobile-services">
+      <button class="mobile-services-toggle" aria-expanded="false">Services &#9662;</button>
+      <ul class="mobile-services-menu" hidden>
+        <li><a href="../services/consulting/" onclick="closeMobileMenu()">Consulting</a></li>
+        <li><a href="../services/training/" onclick="closeMobileMenu()">Training &amp; Development</a></li>
+        <li><a href="../services/quality-assurance/" onclick="closeMobileMenu()">Quality Assurance</a></li>
+      </ul>
+    </div>
     <a href="../about/" onclick="closeMobileMenu()">About</a>
     <button class="btn" onclick="closeMobileMenu(); openModal('contact-modal')">Contact Us</button>
   </div>
@@ -221,6 +237,33 @@
     function closeMobileMenu() {
       mobileMenu.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    // Services dropdown
+    document.querySelectorAll('.nav-dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', e => {
+        e.stopPropagation();
+        const parent = trigger.closest('.nav-dropdown');
+        const isOpen = parent.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Mobile services submenu
+    const mobileServicesToggle = document.querySelector('.mobile-services-toggle');
+    if (mobileServicesToggle) {
+      mobileServicesToggle.addEventListener('click', () => {
+        const menu = document.querySelector('.mobile-services-menu');
+        const willShow = menu.hidden;
+        menu.hidden = !willShow;
+        mobileServicesToggle.setAttribute('aria-expanded', String(willShow));
+      });
     }
 
     // Contact form submission
